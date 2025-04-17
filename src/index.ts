@@ -1,6 +1,5 @@
-const lang = (localStorage.getItem('lang') as 'az' | 'ru') || 'ru'; // Cast the string to 'az' | 'ru'
+const lang = (localStorage.getItem('lang') as 'az' | 'ru') || 'ru';
 
-// Fetch translations and update the content
 function fetchTranslations(lang: 'ru' | 'az') {
   fetch(`/lang/${lang}.json`)
     .then(res => res.json())
@@ -15,31 +14,37 @@ function fetchTranslations(lang: 'ru' | 'az') {
     });
 }
 
-// Initially load the selected language or default language
 fetchTranslations(lang);
 
-// Handle language change without page reload
 function switchLang(lang: 'ru' | 'az') {
-  localStorage.setItem('lang', lang); // Save selected language in localStorage
-  fetchTranslations(lang); // Fetch and update translations
+  localStorage.setItem('lang', lang);
+  fetchTranslations(lang);
 }
 
-// Add event listener for the <select> dropdown
 const langSelect = document.getElementById("language-select") as HTMLSelectElement;
 
 if (langSelect) {
-  langSelect.value = lang; // preselect saved language
+  langSelect.value = lang;
   langSelect.addEventListener("change", () => {
-    switchLang(langSelect.value as 'ru' | 'az'); // Switch language on selection change
+    switchLang(langSelect.value as 'ru' | 'az');
   });
 }
 
 (window as any).switchLang = switchLang;
 
 const menuIcon = document.getElementById('menuIcon');
+const menu = document.getElementById('menu');
 
-if (menuIcon) {
+if (menuIcon && menu) {
   menuIcon.addEventListener('click', () => {
     menuIcon.classList.toggle('active');
+
+    if (window.innerWidth < 1000) {
+      if (menuIcon.classList.contains('active')) {
+        menu.style.transform = 'translateX(0%)'; // Show menu
+      } else {
+        menu.style.transform = 'translateX(-100%)'; // Hide menu
+      }
+    }
   });
 }

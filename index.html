@@ -26,7 +26,20 @@
                 <div></div>
                 <div></div>
             </div>
-            <h1 class="logo">Farmanoglu</h1>
+            <h1 class="logo">
+                <a href="index.html">Farmanoglu</a>
+            </h1>
+        </div>
+        <div class="menu" id="menu">
+            <ul class="flex menu-list">
+                <li data-i18n="about"></li>
+                <li data-i18n="furniture"></li>
+                <li data-i18n="kitchens"></li>
+                <li data-i18n="wardrobes"></li>
+                <li data-i18n="closets"></li>
+                <li data-i18n="contact"></li>
+                <li class="phone-number">+7 903 602 58 50</li>
+            </ul>
         </div>
         <div class="flex">
             <select id="language-select">
@@ -35,8 +48,28 @@
             </select>
         </div>
     </header>
-    <h1 data-i18n="welcome"></h1>
-    <p data-i18n="description"></p>
+    <main>
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">Slide 1</div>
+                <div class="swiper-slide">Slide 2</div>
+                <div class="swiper-slide">Slide 3</div>
+            </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- Initialize Swiper -->
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+        });
+    </script>
     <script src="./dist/index.js"></script>
 </body>
 

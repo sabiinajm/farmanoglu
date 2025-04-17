@@ -1,6 +1,5 @@
 "use strict";
-const lang = localStorage.getItem('lang') || 'ru'; // Cast the string to 'az' | 'ru'
-// Fetch translations and update the content
+const lang = localStorage.getItem('lang') || 'ru';
 function fetchTranslations(lang) {
     fetch(`/lang/${lang}.json`)
         .then(res => res.json())
@@ -14,25 +13,31 @@ function fetchTranslations(lang) {
         document.documentElement.lang = lang;
     });
 }
-// Initially load the selected language or default language
 fetchTranslations(lang);
-// Handle language change without page reload
 function switchLang(lang) {
-    localStorage.setItem('lang', lang); // Save selected language in localStorage
-    fetchTranslations(lang); // Fetch and update translations
+    localStorage.setItem('lang', lang);
+    fetchTranslations(lang);
 }
-// Add event listener for the <select> dropdown
 const langSelect = document.getElementById("language-select");
 if (langSelect) {
-    langSelect.value = lang; // preselect saved language
+    langSelect.value = lang;
     langSelect.addEventListener("change", () => {
-        switchLang(langSelect.value); // Switch language on selection change
+        switchLang(langSelect.value);
     });
 }
 window.switchLang = switchLang;
 const menuIcon = document.getElementById('menuIcon');
-if (menuIcon) {
+const menu = document.getElementById('menu');
+if (menuIcon && menu) {
     menuIcon.addEventListener('click', () => {
         menuIcon.classList.toggle('active');
+        if (window.innerWidth < 1000) {
+            if (menuIcon.classList.contains('active')) {
+                menu.style.transform = 'translateX(0%)'; // Show menu
+            }
+            else {
+                menu.style.transform = 'translateX(-100%)'; // Hide menu
+            }
+        }
     });
 }

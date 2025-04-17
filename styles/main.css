@@ -1,6 +1,5 @@
 * {
   font-family: "Nunito", sans-serif;
-  font-weight: 200;
 }
 
 .menu-icon {
@@ -18,13 +17,13 @@
   transition: 0.3s;
 }
 .menu-icon.active div:nth-child(1) {
-  transform: rotate(45deg) translate(5px, 5px);
+  transform: rotate(45deg) translate(3px, 4px);
 }
 .menu-icon.active div:nth-child(2) {
   opacity: 0;
 }
 .menu-icon.active div:nth-child(3) {
-  transform: rotate(-45deg) translate(4px, -4px);
+  transform: rotate(-45deg) translate(4px, -5px);
 }
 
 header {
@@ -48,6 +47,11 @@ header {
   font-size: 1.1rem;
   font-weight: 300;
   letter-spacing: 3px;
+  cursor: pointer;
+}
+.logo a {
+  text-decoration: none;
+  color: #222;
 }
 
 #language-select {
@@ -62,10 +66,89 @@ header {
   align-items: center;
 }
 
+.menu {
+  transform: translateX(-100%);
+  transition: transform 0.3s ease-in-out;
+  position: absolute;
+  left: 0;
+  top: 63px;
+  padding-top: 20px;
+  width: 100%;
+  background-color: white;
+  z-index: 1000;
+}
+.menu.active {
+  transform: translateX(0%);
+}
+.menu .menu-list {
+  flex-direction: column;
+  align-items: flex-start;
+  list-style: none;
+  font-weight: 500;
+  gap: 40px;
+}
+.menu li {
+  transition: 0.3s;
+}
+.menu li:hover {
+  color: #7c041c;
+  cursor: pointer;
+}
+
+.phone-number {
+  font-size: 0.9rem;
+  text-decoration: underline;
+  text-decoration-color: #7c041c;
+  cursor: pointer;
+}
+
+.swiper {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  overflow: hidden;
+}
+
+.swiper-wrapper {
+  display: flex;
+  transition-property: transform;
+}
+
+.swiper-slide {
+  flex-shrink: 0;
+  width: 100%;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  background: #f4f4f4;
+}
+
 @media (min-width: 768px) {
   .logo {
     font-size: 1.5rem;
     padding-left: 10px;
+  }
+}
+@media (min-width: 1000px) {
+  .menu {
+    display: flex;
+    transform: translateX(0%) !important;
+    position: static;
+    background: transparent;
+    padding-top: 0;
+  }
+  .menu-icon {
+    display: none;
+  }
+  .menu-list {
+    flex-direction: row !important;
+    align-items: center;
+    justify-content: center;
+  }
+  .phone-number {
+    display: none;
   }
 }
 
