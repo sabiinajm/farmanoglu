@@ -6,6 +6,16 @@
     "kitchens": "Mətbəxlər",
     "wardrobes": "Şkaflar",
     "closets": "Qarderoblar",
-    "contact": "Əlaqə"
+    "contact": "Əlaqə",
+    "statement1": {
+      "part1": "Keyfiyyət – <br />",
+      "part2": "ilk toxunuşdan hiss olunur."},
+    "statement2": {
+      "part1": "Sizə uyğun, <br />",
+      "part2": "sizə özəl mebel."},
+    "statement3": {
+      "part1": "Detallarda, <br />",
+      "part2": "gizlənmiş keyfiyyət."},
+      "sendBtn": "Müraciət et"
   }
   

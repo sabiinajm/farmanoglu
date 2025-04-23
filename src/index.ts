@@ -6,8 +6,17 @@ function fetchTranslations(lang: 'ru' | 'az') {
     .then(translations => {
       document.querySelectorAll<HTMLElement>('[data-i18n]').forEach(el => {
         const key = el.dataset.i18n!;
-        if (translations[key]) {
-          el.textContent = translations[key];
+        const translation = translations[key];
+
+        if (typeof translation === 'string') {
+          el.innerHTML = translation;
+        } else if (typeof translation === 'object' && translation !== null) {
+          el.innerHTML = `${translation.part1} <div class="highlight">${translation.part2}</div>`;
+          const part2Element = el.querySelector('.highlight') as HTMLElement;
+          if (part2Element) {
+            part2Element.style.opacity = '.7'; 
+            part2Element.style.paddingLeft = '3rem'
+          }
         }
       });
       document.documentElement.lang = lang;
@@ -41,10 +50,28 @@ if (menuIcon && menu) {
 
     if (window.innerWidth < 1000) {
       if (menuIcon.classList.contains('active')) {
-        menu.style.transform = 'translateX(0%)'; // Show menu
+        menu.style.transform = 'translateX(0%)';
       } else {
-        menu.style.transform = 'translateX(-100%)'; // Hide menu
+        menu.style.transform = 'translateX(-100%)';
       }
     }
   });
 }
+
+const openBtn = document.getElementById('openModalBtn')!;
+const modal = document.getElementById('popupModal')!;
+const closeBtn = document.getElementById('closeModalBtn')!;
+
+openBtn.addEventListener('click', () => {
+  modal.classList.remove('hidden');
+});
+
+closeBtn.addEventListener('click', () => {
+  modal.classList.add('hidden');
+});
+
+window.addEventListener('click', (e) => {
+  if (e.target === modal) {
+    modal.classList.add('hidden');
+  }
+});
