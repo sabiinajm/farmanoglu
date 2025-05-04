@@ -33,15 +33,22 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 95%;
+  gap: 15px;
+  padding-inline: 10px;
   height: 63px;
   margin: 0 auto;
+  position: sticky;
+  background: #fff;
+  top: 0;
+  z-index: 10;
 }
 
 .header-part {
   display: flex;
-  gap: 13px;
+  justify-content: center;
   align-items: center;
+  gap: 15px;
+  gap: 13px;
   margin: auto 0;
 }
 
@@ -49,7 +56,7 @@ header {
   text-transform: uppercase;
   font-size: 1.1rem;
   font-weight: 300;
-  padding-right: 20px;
+  padding-right: 10px;
   letter-spacing: 3px;
   cursor: pointer;
 }
@@ -67,7 +74,9 @@ header {
 
 .flex {
   display: flex;
+  justify-content: center;
   align-items: center;
+  gap: 15px;
 }
 
 .menu {
@@ -77,7 +86,10 @@ header {
   left: 0;
   top: 63px;
   padding-top: 20px;
+  font-size: 0.9rem;
   width: 100%;
+  height: 100vh;
+  padding-left: 20px;
   background-color: white;
   z-index: 1000;
 }
@@ -99,6 +111,17 @@ header {
   cursor: pointer;
 }
 
+.text-us {
+  display: none;
+  white-space: nowrap;
+  padding-right: 10px;
+  color: #7c041c;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
 .phone-number {
   font-size: 0.9rem;
   text-decoration: underline;
@@ -108,7 +131,6 @@ header {
 
 .swiper {
   position: relative;
-  width: 100vw;
   height: 400px;
   overflow: hidden;
 }
@@ -132,11 +154,17 @@ header {
   width: 100%;
   height: 300px;
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+  gap: 15px;
   text-align: start;
   font-size: 1rem;
-  background: url("/images/1.png") center/cover;
+}
+.swiper-slide .swiper-img-1 {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 .swiper-slide h1 {
   display: flex;
@@ -147,9 +175,10 @@ header {
   text-shadow: 5px 5px 15px #222;
   font-weight: 400;
   position: absolute;
+  top: 0;
   left: 10%;
   text-align: start;
-  z-index: 5;
+  z-index: 50;
 }
 
 .swiper-button-next {
@@ -181,6 +210,7 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
+  gap: 15px;
   background: white;
   padding: 10px 0;
   transform: translateX(-50%);
@@ -198,7 +228,7 @@ header {
   padding: 2rem 3rem;
 }
 
-.dark-btn {
+.btn {
   background: #000;
   color: white;
   width: 230px;
@@ -209,12 +239,28 @@ header {
   transition: all 0.2s;
 }
 
+.dark-btn {
+  background: #000;
+}
+
+.primary-btn {
+  background: #7c041c;
+}
+
 .dark-btn:hover {
   background: #7c041c;
 }
 
 .dark-btn:active {
   background: #7c041c;
+}
+
+.primary-btn:hover {
+  background: #940522;
+}
+
+.primary-btn:active {
+  background: #940522;
 }
 
 .modal {
@@ -227,6 +273,7 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
+  gap: 15px;
   z-index: 1000;
 }
 
@@ -253,6 +300,7 @@ header {
 .icons {
   gap: 20px;
   font-size: 1.5rem;
+  padding-left: 15px;
 }
 .icons a {
   color: #000;
@@ -260,6 +308,65 @@ header {
 }
 .icons a:hover {
   color: #7c041c;
+}
+
+.wrap {
+  flex-wrap: wrap;
+}
+
+.about-section {
+  background: #f4f4f4;
+  padding: 50px;
+}
+.about-section h2 {
+  padding-bottom: 40px;
+  font-size: 2rem;
+}
+.about-section p {
+  font-weight: 200;
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+.about-section img {
+  width: 95%;
+  min-width: 250px;
+  max-width: 500px;
+  align-self: flex-start;
+  flex: 1;
+}
+
+.flex-col {
+  flex-direction: column;
+  display: flex;
+  gap: 20px;
+}
+
+.fa-phone {
+  font-size: 1.2rem;
+}
+
+footer {
+  padding: 30px;
+}
+footer .footer-align {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding: 10px;
+}
+footer .icons {
+  padding-top: 20px;
+}
+footer p {
+  font-weight: 200;
+  padding-top: 20px;
+  font-size: 1.2rem;
+}
+footer .logo {
+  padding: 20px 0;
+}
+footer .btn {
+  margin: 20px 0;
 }
 
 @media (min-width: 768px) {
@@ -277,21 +384,33 @@ header {
     transform: translateX(0%) !important;
     position: static;
     background: transparent;
+    width: auto;
+    height: auto;
+    padding-inline: 10px;
     padding-top: 0;
+  }
+  .text-us {
+    display: block;
   }
   .menu-icon {
     display: none;
   }
   .menu-list {
     flex-direction: row !important;
-    align-items: center;
+    display: flex;
     justify-content: center;
+    align-items: center;
+    gap: 15px;
   }
   .phone-number {
     display: none;
   }
   .swiper-slide {
     font-size: 1.7rem;
+  }
+  .about-section {
+    min-width: 940px;
+    margin: 0 auto;
   }
 }
 

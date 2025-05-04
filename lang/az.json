@@ -7,6 +7,7 @@
     "wardrobes": "Şkaflar",
     "closets": "Qarderoblar",
     "contact": "Əlaqə",
+    "textUs": "Sualınızı yazın",
     "statement1": {
       "part1": "Keyfiyyət – <br />",
       "part2": "ilk toxunuşdan hiss olunur."},
@@ -16,6 +17,10 @@
     "statement3": {
       "part1": "Detallarda, <br />",
       "part2": "gizlənmiş keyfiyyət."},
-      "sendBtn": "Müraciət et"
-  }
+      "sendBtn": "Müraciət et",
+      "aboutHead": "Farmanoğlu Mebel öz fəaliyyətinə 1999-cu ildən başlayıb.",
+      "aboutText": "Farmanoğlu Mebel — müasir üslubda keyfiyyətli mebel istehsalı və sifarişi sahəsində ixtisaslaşmış şirkətdir. Biz istənilən zövqə uyğun mətbəx mebelləri, qarderoblar, dolablar və digər mebel növlərini yüksək peşəkarlıqla hazırlayırıq. Hər bir layihəmizdə estetik görünüş, funksionallıq və dayanıqlılığı əsas tuturuq. Müştəri məmnuniyyəti və fərdi yanaşma bizim üçün prioritetdir.",
+      "aboutMore": "Farmanoğlu Mebel — müasir üslubda keyfiyyətli mebel istehsalı və sifarişi sahəsində ixtisaslaşmış şirkətdir. Biz istənilən zövqə uyğun mətbəx mebelləri, qarderoblar, dolablar və digər mebel növlərini yüksək peşəkarlıqla hazırlayırıq. Hər bir layihəmizdə estetik görünüş, funksionallıq və dayanıqlılığı əsas tuturuq. Müştəri məmnuniyyəti və fərdi yanaşma bizim üçün prioritetdir.",
+      "footer": "və ya bizə messencerlərdə və sosial şəbəkələrdə yazın"
+    }
   
