@@ -7,6 +7,7 @@
 
   $primary-color: #7c041c;
   $primary-color-lighter: #940522;
+  $highlight: #999;
 
   @mixin flexCenter($justify: center, $align: center) {
     display: flex;
@@ -327,6 +328,97 @@ background: $primary-color;
   font-size: 1.2rem;
 }
 
+.furniture-section{
+  padding:  2rem;
+    background: #f4f4f4;
+  h2{
+    font-size: 2rem;
+    font-weight: 400;
+  }
+  h4{
+    font-weight:600;
+    text-align: center;
+    padding-top: 1rem;
+    cursor: pointer;
+  }
+  ul{
+    padding-top: 2rem;
+    list-style: none;
+    font-weight: 200;
+    display: flex;
+    gap: 2rem;
+    overflow-x:auto
+  }
+  li:hover{
+    color: $highlight;
+    cursor: pointer;
+  }
+}
+
+.gallery{
+  display: grid;
+}
+
+.gallery-imgs{
+  position: relative;
+  margin-top: 2rem;
+  
+  img{
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+  }
+
+.shadow2 {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; 
+  height: 300px;
+  background: linear-gradient(to bottom, #00000028, #000000a6);
+  transition: opacity .3s ease-in-out;
+}
+
+.hover-gradient {
+  background: linear-gradient(to bottom, #00000028, #000000b9);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.container:hover .hover-gradient {
+  opacity: 1;
+}
+
+  h3{
+    position: absolute;
+    bottom: 1rem;
+    left: 10px;
+    color: white;
+  }
+
+  .eye{
+    height: 35px;
+    width: 35px;
+    background: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }
+  i{
+    color: white;
+  }
+}
+
+.work-section{
+  background: #000;
+  min-height: 600px;
+  h1{
+    color: #fff;
+  }
+}
+
 footer{
 padding: 30px;
 .footer-align{
@@ -351,6 +443,16 @@ p{
     margin: 20px 0;
   }
 }
+
+  @media (min-width: 600px) {
+
+  .gallery {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  }
+
   @media (min-width: 768px) {
     .logo{
         font-size: 1.5rem;
@@ -359,6 +461,7 @@ p{
     .swiper-slide {
 font-size: 1.3rem;
     }
+
   }
   @media (min-width: 1000px) {
     .menu{
@@ -392,4 +495,7 @@ font-size: 1.3rem;
       margin: 0 auto;
 
     }
+      .gallery {
+    grid-template-columns: repeat(3, 1fr);
+  }
   }
