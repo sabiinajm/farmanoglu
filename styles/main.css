@@ -5,6 +5,15 @@
   padding: 0;
 }
 
+.active {
+  color: #940522;
+  text-decoration: underline 0.2px;
+}
+
+.active:hover {
+  color: #940522 !important;
+}
+
 .container {
   max-width: 1400px;
   margin: 0 auto;
@@ -118,6 +127,10 @@ header {
   font-weight: 500;
   gap: 40px;
 }
+.menu .menu-list a {
+  color: #000;
+  text-decoration: none;
+}
 .menu li {
   transition: 0.3s;
 }
@@ -162,11 +175,13 @@ header {
   background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.379), transparent);
   height: 400px;
   width: 100%;
+  z-index: 1;
   left: 0;
 }
 
 .swiper-slide {
   width: 100%;
+  position: relative;
   height: 300px;
   display: flex;
   justify-content: center;
@@ -189,6 +204,7 @@ header {
   left: 10px;
   right: 0;
   margin: 0 auto;
+  z-index: 2;
 }
 .swiper-slide h1 {
   display: flex;
@@ -198,9 +214,10 @@ header {
   height: 400px;
   text-shadow: 5px 5px 15px #222;
   font-weight: 400;
-  left: 10%;
   text-align: start;
   z-index: 50;
+  position: relative;
+  z-index: 3;
 }
 
 .swiper-button-next {
@@ -473,6 +490,16 @@ header {
   gap: 3rem;
   align-items: center;
 }
+.stages h2 {
+  transition: all 0.5s;
+}
+.stages h2:hover {
+  color: #940522;
+  cursor: pointer;
+  text-decoration-line: underline;
+  text-decoration-style: dashed;
+  text-underline-offset: 8px;
+}
 
 .stage1 {
   position: absolute;
@@ -503,6 +530,17 @@ header {
   width: 10px;
   border-radius: 50%;
   background: #940522;
+}
+
+.pages-header {
+  background: #f4f4f4;
+  height: 120px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: start;
+}
+.pages-header h1 {
+  font-size: 3rem;
 }
 
 footer {

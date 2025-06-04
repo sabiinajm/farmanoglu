@@ -34,13 +34,13 @@
             </div>
             <div class="menu" id="menu">
                 <ul class="flex menu-list">
-                    <li data-i18n="about"></li>
-                    <li data-i18n="furniture"></li>
-                    <li data-i18n="kitchens"></li>
-                    <li data-i18n="wardrobes"></li>
-                    <li data-i18n="closets"></li>
-                    <li data-i18n="contact"></li>
-                    <li class="phone-number">+7 903 602 58 50</li>
+                    <li><a href="#aboutSection" data-i18n="about"></a></li>
+                    <li><a href="/pages/furniture.html" data-i18n="furniture"></a></li>
+                    <li><a data-i18n="kitchens"></a></li>
+                    <li><a data-i18n="wardrobes"></a></li>
+                    <li><a data-i18n="closets"></a></li>
+                    <li><a data-i18n="contact"></a></li>
+                    <li><a class="phone-number">+7 903 602 58 50</a></li>
                 </ul>
             </div>
             <div class="flex">
@@ -103,7 +103,7 @@
                 </a>
             </div>
         </div>
-        <div class="about-section">
+        <div class="about-section" id="aboutSection">
             <div class="container">
                 <h2 data-i18n="aboutHead"></h2>
                 <div class="flex wrap">
@@ -118,69 +118,35 @@
         <div class="furniture-section">
             <div class="container">
                 <h2 data-i18n="furnitureHead"></h2>
-                <ul>
-                    <li data-i18n="furniture-section-all"></li>
-                    <li data-i18n="furniture-section-kitchen"></li>
-                    <li data-i18n="furniture-section-wardrobes"></li>
-                    <li data-i18n="furniture-section-closets"></li>
+                <ul id="furnitureMenu">
+                    <li class="listItem active" data-section="all" data-i18n="furniture-section-all"></li>
+                    <li class="listItem" data-section="kitchen" data-i18n="furniture-section-kitchen"></li>
+                    <li class="listItem" data-section="wardrobes" data-i18n="furniture-section-wardrobes"></li>
+                    <li class="listItem" data-section="closets" data-i18n="furniture-section-closets"></li>
                 </ul>
-                <div class="gallery">
-                    <div class="gallery-imgs">
-                        <img src="/images/gallery1.png" alt="">
-                        <div class="container">
-                            <div class="shadow2"></div>
-                            <div class="shadow2 hover-gradient"></div>
-                        </div>
-                        <div class="eye">
-                            <i class="fa-regular fa-eye"></i>
-                        </div>
-                        <h3>idk</h3>
-                    </div>
-                    <div class="gallery-imgs">
-                        <img src="/images/gallery2.png" alt="">
-                        <div class="container">
-                            <div class="shadow2"></div>
-                            <div class="shadow2 hover-gradient"></div>
-                        </div>
-                        <div class="eye">
-                            <i class="fa-regular fa-eye"></i>
-                        </div>
-                        <h3>idk</h3>
-                    </div>
-                    <div class="gallery-imgs">
-                        <img src="/images/gallery3.png" alt="">
-                        <div class="container">
-                            <div class="shadow2"></div>
-                            <div class="shadow2 hover-gradient"></div>
-                        </div>
-                        <div class="eye">
-                            <i class="fa-regular fa-eye"></i>
-                        </div>
-                        <h3>idk</h3>
-                    </div>
-                </div>
+                <div class="gallery" id="gallery"></div>
                 <h4 data-i18n="more"></h4>
             </div>
         </div>
         <div class="work-section">
             <div class="container">
-                <h1>Как мы работаем</h1>
+                <h1 data-i18n="workHead"></h1>
                 <div class="center">
                     <div class="vertical-line">
                         <div class="stages stage1">
                             <div class="dot dot1"></div>
-                            <h2>Дизайн</h2>
+                            <h2 data-i18n="design">Дизайн</h2>
                         </div>
                         <div class="stages stage2">
-                            <h2>Конструирование</h2>
+                            <h2 data-i18n="construction">Конструирование</h2>
                             <div class="dot dot2"></div>
                         </div>
                         <div class="stages stage3">
                             <div class="dot dot3"></div>
-                            <h2>Производство</h2>
+                            <h2 data-i18n="production">Производство</h2>
                         </div>
                         <div class="stages stage4">
-                            <h2>Монтаж</h2>
+                            <h2 data-i18n="installation">Монтаж</h2>
                             <div class="dot dot4"></div>
                         </div>
 
