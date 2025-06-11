@@ -75,3 +75,20 @@ window.addEventListener('click', (e) => {
     modal.classList.add('hidden');
   }
 });
+
+const ids = ['design', 'constr', 'proiz', 'montaj'];
+
+ids.forEach((id) => {
+  const text = document.getElementById(`${id}-text`);
+  const image = document.getElementById(`${id}-image`);
+
+  if (text && image) {
+    text.addEventListener('mouseenter', () => {
+      image.classList.add('show');
+    });
+
+    text.addEventListener('mouseleave', () => {
+      image.classList.remove('show');
+    });
+  }
+});

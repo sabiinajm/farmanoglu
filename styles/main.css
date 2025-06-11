@@ -53,7 +53,7 @@
 header {
   position: sticky;
   top: 0;
-  z-index: 10;
+  z-index: 100;
   background: #fff;
 }
 
@@ -488,10 +488,14 @@ header {
 .stages {
   display: inline-flex;
   gap: 3rem;
+  position: relative;
   align-items: center;
 }
 .stages h2 {
   transition: all 0.5s;
+  z-index: 20;
+  font-weight: 600;
+  text-shadow: #000 5px 5px 10px;
 }
 .stages h2:hover {
   color: #940522;
@@ -523,6 +527,10 @@ header {
   position: absolute;
   right: -4px;
   top: 24rem;
+}
+
+.hover-image {
+  display: none;
 }
 
 .dot {
@@ -618,6 +626,36 @@ footer .btn {
   }
   .gallery {
     grid-template-columns: repeat(3, 1fr);
+  }
+  .hover-image {
+    position: absolute;
+    top: -10px;
+    left: 90%;
+    width: 300px;
+    display: block;
+    z-index: 10;
+    opacity: 0;
+    transform: translateY(-150px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+  }
+  .hover-image.show {
+    opacity: 1;
+    transform: translateY(-30px);
+  }
+  .hover-image2 {
+    position: absolute;
+    top: -10px;
+    right: 90%;
+    width: 300px;
+    display: block;
+    z-index: 10;
+    opacity: 0;
+    transform: translateY(-150px);
+    transition: opacity 1s ease, transform 1s ease;
+  }
+  .hover-image2.show {
+    opacity: 1;
+    transform: translateY(-50px);
   }
 }
 
