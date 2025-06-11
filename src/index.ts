@@ -92,3 +92,84 @@ ids.forEach((id) => {
     });
   }
 });
+
+type GalleryItem = {
+  img: string;
+  captionKey: string;
+};
+
+type GalleryData = {
+  [key: string]: GalleryItem[];
+};
+
+
+const galleryMenu = document.getElementById('furnitureMenu') as HTMLElement | null;
+const gallery = document.getElementById('gallery') as HTMLElement | null;
+
+const galleryData: GalleryData = {
+  all: [
+    { img: '/images/gallery1.jpg', captionKey: 'gallery-1' },
+    { img: '/images/gallery2.jpg', captionKey: 'gallery-2' },
+    { img: '/images/gallery3.jpg', captionKey: 'gallery-3' },
+  ],
+  kitchen: [
+    { img: '/images/kitchen1.jpg', captionKey: 'kitchen-1' },
+    { img: '/images/kitchen2.jpg', captionKey: 'kitchen-2' },
+    { img: '/images/kitchen3.jpg', captionKey: 'kitchen-3' },
+  ],
+  wardrobes: [
+    { img: '/images/wardrobe1.jpg', captionKey: 'wardrobe-1' },
+    { img: '/images/wardrobe2.jpg', captionKey: 'wardrobe-2' },
+    { img: '/images/wardrobe3.jpg', captionKey: 'wardrobe-3' },
+  ],
+  closets: [
+    { img: '/images/closet1.jpg', captionKey: 'closet-1' },
+  ],
+};
+
+
+function renderGallery(section: string): void {
+  if (!gallery) return;
+  gallery.innerHTML = '';
+
+  const items = galleryData[section] || [];
+
+  items.forEach((item) => {
+    const div = document.createElement('div');
+    div.classList.add('gallery-imgs');
+    div.innerHTML = `
+      <img src="${item.img}" alt="">
+      <div class="container">
+        <div class="shadow2"></div>
+        <div class="shadow2 hover-gradient"></div>
+      </div>
+      <div class="eye">
+        <i class="fa-regular fa-eye"></i>
+      </div>
+      <h3 data-i18n="${item.captionKey}"></h3>
+    `;
+    gallery.appendChild(div);
+  });
+
+  fetchTranslations(lang);
+}
+
+if (galleryMenu) {
+  galleryMenu.addEventListener('click', (e: Event) => {
+    const target = e.target as HTMLElement;
+
+    if (target.tagName.toLowerCase() === 'li') {
+      const allItems = galleryMenu.querySelectorAll('li');
+      allItems.forEach((li) => li.classList.remove('active'));
+      target.classList.add('active');
+
+      const section = target.getAttribute('data-section');
+      if (section) {
+        renderGallery(section);
+      }
+    }
+  });
+}
+
+renderGallery('all');
+

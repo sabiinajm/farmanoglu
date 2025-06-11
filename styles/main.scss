@@ -468,7 +468,7 @@ background: $primary-color;
 
 
 .vertical-line{
-  height: 410px;
+  height: 390px;
   width: 1px;
   background: #fff;
   position: relative;
@@ -481,6 +481,7 @@ background: $primary-color;
   h2{
     transition: all .5s;
     z-index: 20;
+    font-size: .9rem;
     font-weight: 600;
     text-shadow: #000 5px 5px 10px;
   }
@@ -515,6 +516,9 @@ top: 24rem;
 }
 
 .hover-image {
+ display: none;
+}
+.hover-image2 {
  display: none;
 }
 
@@ -567,6 +571,14 @@ p{
   .gallery {
     grid-template-columns: repeat(2, 1fr);
     gap: 10px;
+  }
+  .stages{
+    h2{
+      font-size: 2rem;
+    }
+  }
+  .vertical-line{
+  height: 410px;
   }
   }
 
