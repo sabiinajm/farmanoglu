@@ -18,7 +18,7 @@
   }
 
   .active{
-    color: $primary-color-lighter;
+    color: $primary-color-lighter !important;
     text-decoration: underline .2px;
   }
   
@@ -109,6 +109,7 @@ header{
     transition: transform 0.3s ease-in-out;
     position: absolute;
     left: 0;
+    white-space: nowrap;
     top: 63px;
     padding-top: 20px;
     font-size: .8rem;
@@ -183,7 +184,10 @@ header{
   height: 300px;
   @include flexCenter(); 
   text-align: start;
-  font-size: 1rem;
+  
+  h1{
+    font-size: 1.1rem;
+  }
   
   .swiper-img-1 {
     width: 100%;
@@ -339,15 +343,15 @@ background: $primary-color;
 }
 .about-section{
   background: #f4f4f4;
-  padding: 50px ;
+  padding: 20px ;
   
   h2{
     padding-bottom: 40px;
-    font-size: 2rem;
+    font-size: 1.3rem;
   }
   p{
     font-weight: 200;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     line-height: 1.6;
   }
   img{
@@ -369,7 +373,11 @@ background: $primary-color;
 
 .furniture-section{
   padding:  2rem;
-    background: #f4f4f4;
+    background: #fff;
+    a{
+      color: #000;
+      text-decoration: none;
+    }
   h2{
     font-size: 2rem;
     font-weight: 400;
@@ -401,6 +409,7 @@ background: $primary-color;
 .gallery-imgs{
   position: relative;
   margin-top: 2rem;
+  cursor: pointer;
   
   img{
     width: 100%;
@@ -439,30 +448,59 @@ background: $primary-color;
     width: 35px;
     background: #000;
     display: flex;
-    justify-content: center;
+  justify-content: flex-end;
     align-items: center;
+    overflow: hidden;
     position: absolute;
+    transition: width 0.5s;
     top: 10px;
     right: 10px;
   }
   i{
     color: white;
   }
+  .eye-text {
+  transition: all 0.5s ease;
+  font-size: 1rem;
+  display: none;
+  position: absolute;
+  left: 5px;
+  color: white;
 }
-
+.eye-box{
+  width: 35px;
+  height: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+}
+}
+.gallery-imgs:hover{
+  .eye {
+    width: 125px;
+    background: $primary-color-lighter; 
+  }
+.eye-text {
+  display: block;
+}
+.eye-box{
+  background: $primary-color-lighter;
+}
+} 
 .work-section{
   background: #000;
   min-height: 700px;
   h1{
     color: #fff;
-    font-weight: 700;
+    font-weight: 500;
     font-size: 2rem;
     padding: 5rem 0 2rem 2rem ;
   }
   h2{
     color: #fff;
-    font-weight: 300;
-    font-size: 2rem;
+    font-weight: 200 !important;
+    font-size: 1rem !important;
   }
 }
 
@@ -475,7 +513,7 @@ background: $primary-color;
 }
 .stages{
   display: inline-flex;
-  gap: 3rem;
+  gap: 1rem;
   position: relative;
   align-items: center;
   h2{
@@ -497,7 +535,7 @@ background: $primary-color;
 .stage1{
 position: absolute;
 left: -4px;
-top: -1.1rem;
+top: -.7rem;
 }
 .stage2{
 position: absolute;
@@ -532,12 +570,12 @@ top: 24rem;
 
 .pages-header{
   background: $background;
-  height: 120px;
+  height: 150px;
   display: flex;
   align-items: flex-end;
-  justify-content: start;
   h1{
     font-size: 3rem;
+    font-weight: 400;
   }
 }
 
@@ -573,22 +611,28 @@ p{
     gap: 10px;
   }
   .stages{
+    gap: 3rem;
     h2{
-      font-size: 2rem;
+      font-size: 1.5rem !important;
     }
   }
   .vertical-line{
-  height: 410px;
+  height: 400px;
   }
   }
 
   @media (min-width: 768px) {
     .logo{
-        font-size: 1.5rem;
+        font-size: .9rem;
         padding-left: 10px;
     }
     .swiper-slide {
-font-size: 1.3rem;
+      h1{
+        font-size: 2rem;
+      }
+    }
+    .about-section{
+        padding: 50px ;
     }
 
   }
@@ -616,8 +660,10 @@ font-size: 1.3rem;
     .phone-number{
       display: none;
     }
-    .swiper-slide{
-    font-size: 1.7rem;
+    .swiper-slide {
+      h1{
+        font-size: 3rem;
+      }
     }
     .about-section{
       min-width: 940px;

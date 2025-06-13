@@ -34,21 +34,22 @@
             </div>
             <div class="menu" id="menu">
                 <ul class="flex menu-list">
-                    <li><a href="#aboutSection" data-i18n="about"></a></li>
-                    <li><a href="/pages/gallery.html?section=kitchen" data-i18n="kitchens"></a></li>
+                    <li><a class="listItem active" href="/" data-i18n="home"></a></li>
+                    <li><a href="/pages/gallery.html?section=kitchen&lang=az" data-i18n="kitchens"></a></li>
                     <li><a href="/pages/gallery.html?section=wardrobes" data-i18n="wardrobes"></a></li>
                     <li><a href="/pages/gallery.html?section=closets" data-i18n="closets"></a></li>
                     <li><a href="/pages/gallery.html?section=bathroom" data-i18n="bath"></a></li>
-                    <li><a data-i18n="contact"></a></li>
-                    <li><a class="phone-number">+7 903 602 58 50</a></li>
+                    <li><a href="/pages/gallery.html?section=bedroom" data-i18n="bedroom"></a></li>
+                    <li><a class="phone-number" href="tel:+994515155225">+994 51 515 52 25</a></li>
                 </ul>
             </div>
             <div class="flex">
                 <div data-i18n="textUs" class="text-us"></div>
                 <select id="language-select">
-                    <option value="az" onclick="switchLang('az')">🇦🇿</option>
-                    <option value="ru" onclick="switchLang('ru')">🇷🇺</option>
+                    <option value="az">🇦🇿</option>
+                    <option value="ru">🇷🇺</option>
                 </select>
+
             </div>
         </div>
     </header>
@@ -93,7 +94,7 @@
             </div>
             <div class="flex icons">
                 <a href="">
-                    <i class="fa-solid fa-phone"></i>
+                    <i href="tel:+994515155225" class="fa-solid fa-phone"></i>
                 </a>
                 <a href="https://wa.me/994515155225" target="_blank">
                     <i class="fa-brands fa-whatsapp"></i>
@@ -119,13 +120,16 @@
             <div class="container">
                 <h2 data-i18n="furnitureHead"></h2>
                 <ul id="furnitureMenu">
-                    <li class="listItem active" data-section="all" data-i18n="furniture-section-all"></li>
-                    <li class="listItem" data-section="kitchen" data-i18n="furniture-section-kitchen"></li>
+                    <li class="listItem active" data-section="kitchen" data-i18n="furniture-section-kitchen"></li>
                     <li class="listItem" data-section="wardrobes" data-i18n="furniture-section-wardrobes"></li>
                     <li class="listItem" data-section="closets" data-i18n="furniture-section-closets"></li>
+                    <li class="listItem" data-section="bathroom" data-i18n="furniture-section-bathroom"></li>
+                    <li class="listItem" data-section="bedroom" data-i18n="furniture-section-bedroom"></li>
                 </ul>
                 <div class="gallery" id="gallery"></div>
-                <h4 data-i18n="more"></h4>
+                <a id="moreLink">
+                    <h4 data-i18n="more"></h4>
+                </a>
             </div>
         </div>
         <div class="work-section">
@@ -171,7 +175,7 @@
             <div>
                 <p data-i18n="footer"></p>
                 <div class="flex icons">
-                    <a href="">
+                    <a href="tel:+994515155225">
                         <i class="fa-solid fa-phone"></i>
                     </a>
                     <a href="https://wa.me/994515155225" target="_blank">
