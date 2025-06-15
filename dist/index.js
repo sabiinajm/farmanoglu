@@ -1,7 +1,6 @@
 "use strict";
-// Assume `lang` is the current language from localStorage or default
-const lang = localStorage.getItem('lang') || 'ru';
-function fetchTranslations(lang) {
+let lang = localStorage.getItem('lang') || 'ru';
+function applyTranslations(lang) {
     fetch(`/lang/${lang}.json`)
         .then(res => res.json())
         .then(translations => {
@@ -15,7 +14,7 @@ function fetchTranslations(lang) {
                 el.innerHTML = `${translation.part1} <div class="highlight">${translation.part2}</div>`;
                 const part2Element = el.querySelector('.highlight');
                 if (part2Element) {
-                    part2Element.style.opacity = '0.7';
+                    part2Element.style.opacity = '.7';
                     part2Element.style.paddingLeft = '3rem';
                 }
             }
@@ -24,21 +23,19 @@ function fetchTranslations(lang) {
     });
 }
 function switchLang(newLang) {
-    localStorage.setItem('lang', newLang);
-    fetchTranslations(newLang);
+    lang = newLang;
+    localStorage.setItem('lang', lang);
+    applyTranslations(lang);
+    renderGallery(currentSection || 'kitchen', isHomePage ? 3 : undefined);
 }
-document.addEventListener('DOMContentLoaded', () => {
-    const langSelect = document.getElementById('language-select');
-    if (!langSelect)
-        return;
+applyTranslations(lang);
+const langSelect = document.getElementById("language-select");
+if (langSelect) {
     langSelect.value = lang;
-    langSelect.addEventListener('change', () => {
-        const selectedLang = langSelect.value;
-        switchLang(selectedLang);
+    langSelect.addEventListener("change", () => {
+        switchLang(langSelect.value);
     });
-    fetchTranslations(lang);
-});
-fetchTranslations(lang);
+}
 const menuIcon = document.getElementById('menuIcon');
 const menu = document.getElementById('menu');
 if (menuIcon && menu) {
@@ -70,40 +67,232 @@ if (openBtn && modal && closeBtn) {
 });
 const galleryData = {
     kitchen: [
-        { img: '/images/kitchen1.jpg', captionKey: 'kitchen-1' },
-        { img: '/images/kitchen2.jpg', captionKey: 'kitchen-2' },
-        { img: '/images/kitchen3.jpg', captionKey: 'kitchen-3' },
-        { img: '/images/kitchen4.jpg', captionKey: 'kitchen-4' },
-        { img: '/images/kitchen5.jpg', captionKey: 'kitchen-5' },
-        { img: '/images/kitchen6.jpg', captionKey: 'kitchen-6' },
-        { img: '/images/kitchen7.jpg', captionKey: 'kitchen-7' },
+        { img: '/images/kitchen1.jpg',
+            headings: {
+                az: 'Bəyaz mdf-boya mətbəx',
+                ru: 'Белая кухня с краской-mdf',
+            },
+        },
+        { img: '/images/kitchen2.jpg',
+            headings: {
+                az: 'Qulpsuz modern mətbəx',
+                ru: 'Современная кухня без ручек',
+            },
+        },
+        { img: '/images/kitchen3.jpg',
+            headings: {
+                az: 'Adalı mətbəx mebeli',
+                ru: 'Кухонная мебель с островом',
+            },
+        },
+        { img: '/images/kitchen4.jpg',
+            headings: {
+                az: 'Mdf-boya mətbəx mebeli',
+                ru: 'Кухонная мебель с краской MDF',
+            },
+        },
+        { img: '/images/kitchen5.jpg',
+            headings: {
+                az: 'Mətbəx mebeli və bar',
+                ru: 'Кухонная мебель и бар',
+            },
+        },
+        { img: '/images/kitchen6.jpg',
+            headings: {
+                az: 'Gözəl mənzərəli yerdə quraşdırdığımız mətbəx mebeli',
+                ru: 'Кухонная мебель, установленная в месте с прекрасным видом',
+            },
+        },
+        { img: '/images/kitchen7.jpg',
+            headings: {
+                az: 'Bəyaz mdf-boya mətbəx',
+                ru: 'Белая кухня с краской-mdf',
+            },
+        },
+        { img: '/images/kitchen8.jpg',
+            headings: {
+                az: 'Mətbəx 8',
+                ru: 'Кухня 8',
+            },
+        },
     ],
     wardrobes: [
-        { img: '/images/wardrobe1.jpg', captionKey: 'wardrobe-1' },
-        { img: '/images/wardrobe2.jpg', captionKey: 'wardrobe-2' },
-        { img: '/images/wardrobe3.jpg', captionKey: 'wardrobe-3' },
-        { img: '/images/wardrobe4.jpg', captionKey: 'wardrobe-4' },
-        { img: '/images/wardrobe5.jpg', captionKey: 'wardrobe-5' },
-        { img: '/images/wardrobe6.jpg', captionKey: 'wardrobe-6' },
-        { img: '/images/wardrobe7.jpg', captionKey: 'wardrobe-7' },
-        { img: '/images/wardrobe8.jpg', captionKey: 'wardrobe-8' },
-        { img: '/images/wardrobe9.jpg', captionKey: 'wardrobe-9' },
-        { img: '/images/wardrobe10.jpg', captionKey: 'wardrobe-10' },
-        { img: '/images/wardrobe11.jpg', captionKey: 'wardrobe-11' },
-        { img: '/images/wardrobe12.jpg', captionKey: 'wardrobe-12' },
+        { img: '/images/wardrobe1.jpg',
+            headings: {
+                az: 'Dəhliz üçün istehsal etdiyimiz dolab',
+                ru: 'Шкаф, изготовленный для прихожей',
+            },
+        },
+        { img: '/images/wardrobe2.jpg',
+            headings: {
+                az: '',
+                ru: '',
+            },
+        },
+        { img: '/images/wardrobe3.jpg',
+            headings: {
+                az: '',
+                ru: '',
+            },
+        },
+        { img: '/images/wardrobe4.jpg',
+            headings: {
+                az: '',
+                ru: '',
+            },
+        },
+        { img: '/images/wardrobe6.jpg',
+            headings: {
+                az: '',
+                ru: '',
+            },
+        },
+        { img: '/images/wardrobe7.jpg',
+            headings: {
+                az: 'TV / Kamin stendi',
+                ru: 'ТВ и каминная стойка',
+            },
+        },
+        { img: '/images/wardrobe8.jpg',
+            headings: {
+                az: '',
+                ru: '',
+            },
+        },
+        { img: '/images/wardrobe9.jpg',
+            headings: {
+                az: '',
+                ru: '',
+            },
+        },
+        { img: '/images/wardrobe10.jpg',
+            headings: {
+                az: 'Yazı masası',
+                ru: 'Письменный стол',
+            },
+        },
+        { img: '/images/wardrobe11.jpg',
+            headings: {
+                az: 'Böyük dolab',
+                ru: 'Большой шкаф',
+            },
+        },
+        { img: '/images/wardrobe12.jpg',
+            headings: {
+                az: 'Böyük dolab-qarderob',
+                ru: 'Большой шкаф-гардероб',
+            },
+        },
     ],
     closets: [
-        { img: '/images/closet1.jpg', captionKey: 'closet-1' },
+        { img: '/images/closet1.jpg',
+            headings: {
+                az: 'Temper şüşə profilli qarderob otağı',
+                ru: 'Гардеробная с профилем из закалённого стекла',
+            },
+        },
+        { img: '/images/closet2.jpg',
+            headings: {
+                az: 'Qarderob dolabı',
+                ru: 'Шкаф-гардероб',
+            },
+        },
     ],
     bathroom: [
-        { img: '/images/bathroom1.jpg', captionKey: 'bathroom-1' },
-        { img: '/images/bathroom2.jpg', captionKey: 'bathroom-2' },
+        { img: '/images/bathroom1.jpg',
+            headings: {
+                az: 'Hamam mebeli – moydadır',
+                ru: 'Мебель для ванной – раковина',
+            },
+        },
+        { img: '/images/bathroom2.jpg',
+            headings: {
+                az: 'Moydadır - tumba',
+                ru: 'Раковина - тумба',
+            },
+        },
     ],
     bedroom: [
-        { img: '/images/bedroom1.jpg', captionKey: 'bedroom-1' },
-        { img: '/images/bedroom2.jpg', captionKey: 'bedroom-2' },
-        { img: '/images/bedroom3.jpg', captionKey: 'bedroom-3' },
-        { img: '/images/bedroom4.jpg', captionKey: 'bedroom-4' },
+        { img: '/images/bedroom1.jpg',
+            headings: {
+                az: 'Yataq dəsti',
+                ru: 'Спальный комплект',
+            },
+        },
+        { img: '/images/bedroom2.jpg',
+            headings: {
+                az: 'Uşaq otağı dəsti',
+                ru: 'Детский комплект мебели',
+            },
+        },
+        { img: '/images/bedroom3.jpg',
+            headings: {
+                az: 'Mətbəx 8',
+                ru: 'Кухня 8',
+            },
+        },
+        { img: '/images/bedroom4.jpg',
+            headings: {
+                az: 'Yataq dəsti',
+                ru: 'Спальный комплект',
+            },
+        },
+        { img: '/images/bedroom5.jpg',
+            headings: {
+                az: 'Mətbəx 8',
+                ru: 'Кухня 8',
+            },
+        },
+    ],
+    other: [
+        { img: '/images/other1.jpg',
+            headings: {
+                az: 'Yazı masası + kitab rəfi',
+                ru: 'Письменный стол + книжная полка',
+            },
+        },
+        { img: '/images/other2.jpg',
+            headings: {
+                az: 'Trumo-güzgü',
+                ru: 'Трюмо-зеркало',
+            },
+        },
+        { img: '/images/other3.jpg',
+            headings: {
+                az: 'Mətbəx',
+                ru: 'Кухня',
+            },
+        },
+        { img: '/images/other4.jpg',
+            headings: {
+                az: 'Qonaq dəsti masası',
+                ru: 'Стол гостевого комплекта',
+            },
+        },
+        { img: '/images/other5.jpg',
+            headings: {
+                az: 'Dolab və qapılı divar paneli',
+                ru: 'Шкаф и настенная панель с дверцей',
+            },
+        },
+        { img: '/images/other6.jpg',
+            headings: {
+                az: 'Mətbəx',
+                ru: 'Кухня',
+            },
+        },
+        { img: '/images/other7.jpg',
+            headings: {
+                az: 'Mətbəx',
+                ru: 'Кухня',
+            },
+        },
+        { img: '/images/other8.jpg',
+            headings: {
+                az: 'Konsollar',
+                ru: 'Консоли',
+            },
+        },
     ],
 };
 function renderGallery(section, limit) {
@@ -118,6 +307,7 @@ function renderGallery(section, limit) {
     items.forEach((item) => {
         const div = document.createElement('div');
         div.classList.add('gallery-imgs');
+        const heading = item.headings[lang];
         div.innerHTML = `
       <img src="${item.img}" alt="">
       <div class="container">
@@ -130,7 +320,7 @@ function renderGallery(section, limit) {
         <i class="fa-regular fa-eye"></i>
        </div>
       </div>
-      <h3 data-i18n="${item.captionKey}"></h3>
+      <h3>${heading}</h3>
     `;
         gallery.appendChild(div);
     });
@@ -142,8 +332,9 @@ if (galleryMenu) {
         if (target.tagName.toLowerCase() === 'li' && target.dataset.section) {
             galleryMenu.querySelectorAll('li').forEach(li => li.classList.remove('active'));
             target.classList.add('active');
-            renderGallery(target.dataset.section);
+            renderGallery(target.dataset.section, 3);
             currentSection = target.dataset.section;
+            applyTranslations(lang);
         }
     });
 }
@@ -175,7 +366,6 @@ if (menuList) {
         }
     });
 }
-const furnitureMenuList = document.getElementById('furnitureMenu');
 const moreLink = document.getElementById('moreLink');
 let currentSection = 'kitchen';
 if (moreLink) {

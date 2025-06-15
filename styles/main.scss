@@ -66,8 +66,9 @@ margin: 0 auto;
 }
 header{
   position: sticky;
-      top: 0;
-      z-index: 100;
+  top: 0;
+  z-index: 100;
+  box-shadow: #00000069 1px 1px 20px;
   background: #fff;
 }
 .header{
@@ -82,6 +83,8 @@ header{
     margin: auto 0;
   }
   .logo{
+    display: flex;
+    align-items: center;
     text-transform: uppercase;
     font-size: 1.1rem;
     font-weight: 300;
@@ -91,6 +94,10 @@ header{
     a{
       text-decoration: none;
       color: #222;
+    }
+    img{
+      width: 40px;
+      height: 40px;
     }
   }
   #language-select{
@@ -581,6 +588,10 @@ top: 24rem;
 
 footer{
 padding: 30px;
+
+.logo{
+  gap: 10px;
+}
 .footer-align{
   display: flex;
   justify-content: space-between;
