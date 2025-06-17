@@ -1,4 +1,3 @@
-"use strict";
 let lang = localStorage.getItem('lang') || 'ru';
 function applyTranslations(lang) {
     fetch(`/lang/${lang}.json`)
@@ -55,11 +54,10 @@ if (menuIcon && menu) {
     }
 });
 let galleryData;
-fetch('./src/data/galleryData.json')
+fetch('data/galleryData.json')
     .then(res => res.json())
     .then((data) => {
     galleryData = data;
-    renderGallery('kitchen');
 })
     .catch((err) => {
     console.error('Failed to load gallery data:', err);
@@ -74,12 +72,11 @@ function renderGallery(section, limit) {
         items = items.slice(0, limit);
     }
     items.forEach((item) => {
-        var _a;
         const div = document.createElement('div');
         div.classList.add('gallery-imgs');
         const heading = item.headings[lang];
         div.innerHTML = `
-   <a >
+   <a href="/${heading}">
         <img src="${item.img}" alt="">
         <div class="container">
           <div class="shadow2"></div>
@@ -94,21 +91,6 @@ function renderGallery(section, limit) {
         <h3>${heading}</h3>
       </a>
     `;
-        (_a = div.querySelector('a')) === null || _a === void 0 ? void 0 : _a.addEventListener('click', (e) => {
-            e.preventDefault();
-            const main = document.querySelector('main');
-            if (!main)
-                return;
-            main.innerHTML = '';
-            const imgEl = document.createElement('img');
-            imgEl.src = item.img;
-            imgEl.alt = heading;
-            imgEl.style.width = '100%';
-            const h3 = document.createElement('h3');
-            h3.textContent = heading;
-            main.appendChild(imgEl);
-            main.appendChild(h3);
-        });
         gallery.appendChild(div);
     });
 }

@@ -85,12 +85,14 @@ header{
   .logo{
     display: flex;
     align-items: center;
-    text-transform: uppercase;
-    font-size: 1.1rem;
-    font-weight: 300;
-    padding-right: 10px;
-    letter-spacing: 3px;
     cursor: pointer;
+    gap: 10px;
+    h1{
+      text-transform: uppercase;
+      font-size: 1.1rem;
+      font-weight: 300;
+      letter-spacing: 3px;
+    }
     a{
       text-decoration: none;
       color: #222;
@@ -268,6 +270,7 @@ header{
 
 .apply-section{
 display: flex;
+gap: 2rem;
 justify-content: space-between;
 padding: 2rem 3rem;
 }
@@ -301,32 +304,6 @@ background: $primary-color;
 }
 .primary-btn:active{
   background: $primary-color-lighter;
-}
-.modal {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0,0,0,0.5);
-  @include flexCenter();
-  z-index: 1000;
-}
-
-.modal-content {
-  background: white;
-  padding: 2rem;
-  border-radius: 10px;
-  text-align: center;
-  position: relative;
-}
-
-.close {
-  position: absolute;
-  top: 5px;
-  right: 15px;
-  cursor: pointer;
-  font-size: 1.5rem;
 }
 
 .hidden {
@@ -589,9 +566,6 @@ top: 24rem;
 footer{
 padding: 30px;
 
-.logo{
-  gap: 10px;
-}
 .footer-align{
   display: flex;
   justify-content: space-between;
@@ -645,9 +619,12 @@ p{
     .about-section{
         padding: 50px ;
     }
+      .wrap{
+        flex-wrap: nowrap;
+      }
 
   }
-  @media (min-width: 1000px) {
+  @media (min-width: 1050px) {
     .menu{
       display:flex;
       transform: translateX(0%) !important;
@@ -679,7 +656,9 @@ p{
     .about-section{
       min-width: 940px;
       margin: 0 auto;
-
+        img{
+          min-width: 550px;
+        }
     }
       .gallery {
     grid-template-columns: repeat(3, 1fr);
