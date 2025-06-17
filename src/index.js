@@ -53,11 +53,21 @@ if (menuIcon && menu) {
         text.addEventListener('mouseleave', () => image.classList.remove('show'));
     }
 });
+const isHomePage = window.location.pathname === '/' || window.location.pathname === '/index.html';
+const params = new URLSearchParams(window.location.search);
+const section = params.get('section');
 let galleryData;
 fetch('data/galleryData.json')
     .then(res => res.json())
     .then((data) => {
     galleryData = data;
+    if (isHomePage) {
+        renderGallery(section, 3);
+    }
+    else {
+        renderGallery(section);
+    }
+    applyTranslations(lang);
 })
     .catch((err) => {
     console.error('Failed to load gallery data:', err);
@@ -93,6 +103,7 @@ function renderGallery(section, limit) {
     `;
         gallery.appendChild(div);
     });
+    applyTranslations(lang);
 }
 const galleryMenu = document.getElementById('furnitureMenu');
 if (galleryMenu) {
@@ -106,15 +117,6 @@ if (galleryMenu) {
             applyTranslations(lang);
         }
     });
-}
-const isHomePage = window.location.pathname === '/' || window.location.pathname === '/index.html';
-const params = new URLSearchParams(window.location.search);
-const section = params.get('section') || 'kitchen';
-if (isHomePage) {
-    renderGallery(section, 3);
-}
-else {
-    renderGallery(section);
 }
 const menuList = document.querySelector('.menu-list');
 if (menuList) {
@@ -142,3 +144,4 @@ if (moreLink) {
         window.location.href = `/pages/gallery.html?section=${currentSection}`;
     });
 }
+console.log("Hello from updated TS code");

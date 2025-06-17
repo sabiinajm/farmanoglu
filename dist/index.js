@@ -54,12 +54,21 @@ if (menuIcon && menu) {
         text.addEventListener('mouseleave', () => image.classList.remove('show'));
     }
 });
+const isHomePage = window.location.pathname === '/' || window.location.pathname === '/index.html';
+const params = new URLSearchParams(window.location.search);
+const section = params.get('section') || 'kitchen';
 let galleryData;
-fetch('./src/data/galleryData.json')
+fetch('/src/data/galleryData.json')
     .then(res => res.json())
     .then((data) => {
     galleryData = data;
-    renderGallery('kitchen');
+    if (isHomePage) {
+        renderGallery(section, 3);
+    }
+    else {
+        renderGallery(section);
+    }
+    applyTranslations(lang);
 })
     .catch((err) => {
     console.error('Failed to load gallery data:', err);
@@ -74,12 +83,11 @@ function renderGallery(section, limit) {
         items = items.slice(0, limit);
     }
     items.forEach((item) => {
-        var _a;
         const div = document.createElement('div');
         div.classList.add('gallery-imgs');
         const heading = item.headings[lang];
         div.innerHTML = `
-   <a >
+   <a href="/${heading}">
         <img src="${item.img}" alt="">
         <div class="container">
           <div class="shadow2"></div>
@@ -94,23 +102,9 @@ function renderGallery(section, limit) {
         <h3>${heading}</h3>
       </a>
     `;
-        (_a = div.querySelector('a')) === null || _a === void 0 ? void 0 : _a.addEventListener('click', (e) => {
-            e.preventDefault();
-            const main = document.querySelector('main');
-            if (!main)
-                return;
-            main.innerHTML = '';
-            const imgEl = document.createElement('img');
-            imgEl.src = item.img;
-            imgEl.alt = heading;
-            imgEl.style.width = '100%';
-            const h3 = document.createElement('h3');
-            h3.textContent = heading;
-            main.appendChild(imgEl);
-            main.appendChild(h3);
-        });
         gallery.appendChild(div);
     });
+    applyTranslations(lang);
 }
 const galleryMenu = document.getElementById('furnitureMenu');
 if (galleryMenu) {
@@ -124,15 +118,6 @@ if (galleryMenu) {
             applyTranslations(lang);
         }
     });
-}
-const isHomePage = window.location.pathname === '/' || window.location.pathname === '/index.html';
-const params = new URLSearchParams(window.location.search);
-const section = params.get('section') || 'kitchen';
-if (isHomePage) {
-    renderGallery(section, 3);
-}
-else {
-    renderGallery(section);
 }
 const menuList = document.querySelector('.menu-list');
 if (menuList) {
@@ -160,3 +145,4 @@ if (moreLink) {
         window.location.href = `/pages/gallery.html?section=${currentSection}`;
     });
 }
+console.log("Hello from updated TS code");
