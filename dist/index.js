@@ -58,7 +58,7 @@ const isHomePage = window.location.pathname === '/' || window.location.pathname 
 const params = new URLSearchParams(window.location.search);
 const section = params.get('section') || 'kitchen';
 let galleryData;
-fetch('/src/data/galleryData.json')
+fetch('../src/data/galleryData.json')
     .then(res => res.json())
     .then((data) => {
     galleryData = data;
@@ -83,12 +83,19 @@ function renderGallery(section, limit) {
         items = items.slice(0, limit);
     }
     items.forEach((item) => {
+        let firstImgSrc = '';
+        if (typeof item.img === 'object' && item.img !== null) {
+            firstImgSrc = item.img['1'] || ''; // first image key "1"
+        }
+        else if (typeof item.img === 'string') {
+            firstImgSrc = item.img;
+        }
         const div = document.createElement('div');
         div.classList.add('gallery-imgs');
         const heading = item.headings[lang];
         div.innerHTML = `
-   <a href="/${heading}">
-        <img src="${item.img}" alt="">
+<a href="pages/detailed.html?item=${encodeURIComponent(heading)}">
+         <img src="${firstImgSrc}" alt="${heading}">
         <div class="container">
           <div class="shadow2"></div>
           <div class="shadow2 hover-gradient"></div>
@@ -145,4 +152,3 @@ if (moreLink) {
         window.location.href = `/pages/gallery.html?section=${currentSection}`;
     });
 }
-console.log("Hello from updated TS code");

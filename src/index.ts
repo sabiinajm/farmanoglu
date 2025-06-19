@@ -77,7 +77,7 @@ type GalleryData = Record<string, GalleryItem[]>;
 
 let galleryData: GalleryData;
 
-fetch('data/galleryData.json')
+fetch('../src/data/galleryData.json')
   .then(res => res.json())
   .then((data: GalleryData) => {
     galleryData = data;
@@ -107,12 +107,19 @@ function renderGallery(section: string, limit?: number): void {
   }
 
   items.forEach((item) => {
+    let firstImgSrc = '';
+
+if (typeof item.img === 'object' && item.img !== null) {
+  firstImgSrc = item.img['1'] || ''; // first image key "1"
+} else if (typeof item.img === 'string') {
+  firstImgSrc = item.img;
+}
     const div = document.createElement('div');
     div.classList.add('gallery-imgs');
       const heading = item.headings[lang];
     div.innerHTML = `
-   <a href="/${heading}">
-        <img src="${item.img}" alt="">
+<a href="pages/detailed.html?item=${encodeURIComponent(heading)}">
+         <img src="${firstImgSrc}" alt="${heading}">
         <div class="container">
           <div class="shadow2"></div>
           <div class="shadow2 hover-gradient"></div>
@@ -127,7 +134,7 @@ function renderGallery(section: string, limit?: number): void {
       </a>
     `;
     gallery.appendChild(div);
-  });
+  }); 
 applyTranslations(lang);
 }
 
@@ -177,4 +184,3 @@ if (moreLink) {
     window.location.href = `/pages/gallery.html?section=${currentSection}`;
   });
 }
-console.log("Hello from updated TS code");

@@ -39,6 +39,8 @@
        "design": "Дизайн",
       "construction": "Конструирование",
       "production": "Производство",
-      "installation": "Монтаж"
+      "installation": "Монтаж",
+      "prev": "⟵ Предыдущий проект",
+      "next": "Следующий проект ⟶"
   }
   

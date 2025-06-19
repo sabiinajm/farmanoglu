@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="
+    viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Quicksand:wght@300..700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="/styles/main.css">
+    <title>Farmanoglu Mebel</title>
+</head>
+
+<body>
+    <header>
+        <div class="header container">
+            <div class="header-part">
+                <div class="menu-icon" id="menuIcon">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+                <div class="logo">
+                    <img src="/images/logo.jpg" alt="">
+                    <h1 class="logo">
+                        <a href="/index.html">Farmanoglu</a>
+                    </h1>
+                </div>
+            </div>
+            <div class="menu" id="menu">
+                <ul class="flex menu-list">
+                    <li><a href="/" data-i18n="home"></a></li>
+                    <li><a href="/pages/gallery.html?section=kitchen" data-i18n="kitchens"></a></li>
+                    <li><a href="/pages/gallery.html?section=wardrobes" data-i18n="wardrobes"></a></li>
+                    <li><a href="/pages/gallery.html?section=closets" data-i18n="closets"></a></li>
+                    <li><a href="/pages/gallery.html?section=bathroom" data-i18n="bath"></a></li>
+                    <li><a href="/pages/gallery.html?section=bedroom" data-i18n="bedroom"></a></li>
+                    <li><a class="phone-number" href="tel:+994515155225">+994 51 515 52 25</a></li>
+                </ul>
+            </div>
+            <div class="flex">
+                <div data-i18n="textUs" class="text-us"></div>
+                <select id="language-select">
+                    <option value="az" onclick="switchLang('az')">🇦🇿</option>
+                    <option value="ru" onclick="switchLang('ru')">🇷🇺</option>
+                </select>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="details">
+            <div class="image-container container">
+                <img id="detail-img" src="" alt="Gallery Image" />
+            </div>
+            <div class="container detailed-btn">
+                <button class="prev" data-i18n="prev"></button>
+                <button class="next" data-i18n="next"></button>
+            </div>
+        </div>
+
+    </main>
+    <footer>
+        <div class="footer-align wrap container">
+            <div>
+                <div class="logo">
+                    <img src="/images/logo.jpg" alt="">
+                    <h1 class="logo">
+                        <a href="index.html">Farmanoglu</a>
+                    </h1>
+                </div>
+                <a href="https://wa.me/994515155225" target="_blank">
+                    <button class="btn primary-btn" data-i18n="sendBtn"></button>
+                </a>
+            </div>
+            <div>
+                <p data-i18n="footer"></p>
+                <div class="flex icons">
+                    <a href="tel:+994515155225">
+                        <i class="fa-solid fa-phone"></i>
+                    </a>
+                    <a href="https://wa.me/994515155225" target="_blank">
+                        <i class="fa-brands fa-whatsapp"></i>
+                    </a>
+                    <a href="https://instagram.com/farmanoglumebel" target="_blank">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/medium-zoom@1.1.0/dist/medium-zoom.min.js"></script>
+    <script type="module" src="/dist/detailed.js"></script>
+    <script type="module" src="/dist/index.js"></script>
+</body>
+
+</html>

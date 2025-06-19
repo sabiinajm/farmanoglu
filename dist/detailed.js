@@ -1,0 +1,46 @@
+const params2 = new URLSearchParams(window.location.search);
+const itemName = decodeURIComponent(params2.get("item") || "");
+const lang2 = localStorage.getItem("lang") || "az";
+const imgElement = document.getElementById("detail-img");
+const prevBtn = document.querySelector(".prev");
+const nextBtn = document.querySelector(".next");
+let currentIndex = -1;
+let allItems = [];
+fetch("/src/data/galleryData.json")
+    .then((res) => {
+    if (!res.ok)
+        throw new Error(`HTTP error! Status: ${res.status}`);
+    return res.json();
+})
+    .then((data) => {
+    allItems = [].concat(...Object.values(data));
+    currentIndex = allItems.findIndex((item) => Object.values(item.headings).some((heading) => heading.toLowerCase() === itemName.toLowerCase()));
+    if (currentIndex === -1) {
+        document.body.innerHTML = "<h2>Item not found</h2>";
+        return;
+    }
+    renderItem(currentIndex);
+})
+    .catch((err) => {
+    console.error("Failed to load gallery data:", err);
+    document.body.innerHTML = "<h2>Failed to load data</h2>";
+});
+function renderItem(index) {
+    const item = allItems[index];
+    if (!item || !imgElement)
+        return;
+    imgElement.src = item.img;
+}
+prevBtn === null || prevBtn === void 0 ? void 0 : prevBtn.addEventListener("click", () => {
+    if (currentIndex > 0) {
+        currentIndex--;
+        renderItem(currentIndex);
+    }
+});
+nextBtn === null || nextBtn === void 0 ? void 0 : nextBtn.addEventListener("click", () => {
+    if (currentIndex < allItems.length - 1) {
+        currentIndex++;
+        renderItem(currentIndex);
+    }
+});
+export {};
