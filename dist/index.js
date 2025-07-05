@@ -84,8 +84,8 @@ function renderGallery(section, limit) {
     }
     items.forEach((item) => {
         let firstImgSrc = '';
-        if (typeof item.img === 'object' && item.img !== null) {
-            firstImgSrc = item.img['1'] || ''; // first image key "1"
+        if (typeof item.img === 'object' && item.img !== null && 'main' in item.img) {
+            firstImgSrc = item.img.main;
         }
         else if (typeof item.img === 'string') {
             firstImgSrc = item.img;
@@ -94,7 +94,7 @@ function renderGallery(section, limit) {
         div.classList.add('gallery-imgs');
         const heading = item.headings[lang];
         div.innerHTML = `
-<a href="pages/detailed.html?item=${encodeURIComponent(heading)}">
+<a href="/pages/detailed.html?item=${encodeURIComponent(heading)}">
          <img src="${firstImgSrc}" alt="${heading}">
         <div class="container">
           <div class="shadow2"></div>

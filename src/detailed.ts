@@ -1,5 +1,10 @@
 interface GalleryItem {
-  img: string;
+  img: {
+    main: string;
+    other1?: string;
+    other2?: string;
+    other3?: string;
+  } | string;
   headings: {
     az: string;
     ru: string;
@@ -47,8 +52,14 @@ fetch("/src/data/galleryData.json")
 function renderItem(index: number) {
   const item = allItems[index];
   if (!item || !imgElement) return;
-  imgElement.src = item.img;
+
+  if (typeof item.img === "string") {
+    imgElement.src = item.img;
+  } else if (typeof item.img === "object" && item.img.main) {
+    imgElement.src = item.img.main;
+  }
 }
+
 
 prevBtn?.addEventListener("click", () => {
   if (currentIndex > 0) {
@@ -63,5 +74,3 @@ nextBtn?.addEventListener("click", () => {
     renderItem(currentIndex);
   }
 });
-// @ts-ignore
-import mediumZoom from "https://cdn.jsdelivr.net/npm/medium-zoom@1.1.0/dist/medium-zoom.esm.js";

@@ -1,56 +1,88 @@
 {
   "kitchen": [
     {
-      "img": "/images/kitchen1.jpg",
+      "img": {
+        "main": "/images/kitchen1.jpg",
+        "other1": "/images/kitchen1-1.jpg",
+        "other2": "/images/kitchen1-2.jpg",
+        "other3": "/images/kitchen1-3.jpg"
+    },
       "headings": {
         "az": "Bəyaz mdf-boya mətbəx",
         "ru": "Белая кухня с краской-mdf"
       }
     },
     {
-      "img": "/images/kitchen2.jpg",
+    "img": {
+        "main": "/images/kitchen2.jpg",
+        "other1": "/images/kitchen2-1.jpg"
+    },
       "headings": {
         "az": "Qulpsuz modern mətbəx",
         "ru": "Современная кухня без ручек"
       }
     },
     {
-      "img": "/images/kitchen3.jpg",
+      "img": {
+        "main": "/images/kitchen3.jpg",
+        "other1": "/images/kitchen3-1.jpg"
+    },
       "headings": {
         "az": "Adalı mətbəx mebeli",
         "ru": "Кухонная мебель с островом"
       }
     },
-    {
-      "img": "/images/kitchen4.jpg",
+     {
+      "img": {
+        "main": "/images/kitchen4.jpg",
+        "other1": "/images/kitchen4-1.jpg",
+        "other2": "/images/kitchen4-2.jpg",
+        "other3": "/images/kitchen4-3.jpg"
+    },
       "headings": {
         "az": "Mdf-boya mətbəx mebeli",
         "ru": "Кухонная мебель с краской MDF"
       }
     },
-    {
-      "img": "/images/kitchen5.jpg",
+   {
+      "img": {
+        "main": "/images/kitchen5.jpg",
+        "other1": "/images/kitchen5-1.jpg",
+        "other2": "/images/kitchen5-2.jpg"
+    },
       "headings": {
         "az": "Mətbəx mebeli və bar",
         "ru": "Кухонная мебель и бар"
       }
     },
-    {
-      "img": "/images/kitchen6.jpg",
+ {
+      "img": {
+        "main": "/images/kitchen6.jpg",
+        "other1": "/images/kitchen6-1.jpg",
+        "other2": "/images/kitchen6-2.jpg",
+        "other3": "/images/kitchen6-3.jpg"
+    },
       "headings": {
         "az": "Gözəl mənzərəli yerdə quraşdırdığımız mətbəx mebeli",
         "ru": "Кухонная мебель, установленная в месте с прекрасным видом"
       }
     },
-    {
-      "img": "/images/kitchen7.jpg",
+ {
+      "img": {
+        "main": "/images/kitchen7.jpg",
+        "other1": "/images/kitchen7-1.jpg"
+    },
       "headings": {
         "az": "Bəyaz mdf-boya mətbəx",
         "ru": "Белая кухня с краской-mdf"
       }
     },
     {
-      "img": "/images/kitchen8.jpg",
+      "img": {
+        "main": "/images/kitchen8.jpg",
+        "other1": "/images/kitchen8-1.jpg",
+        "other2": "/images/kitchen8-2.jpg"
+    },
       "headings": {
         "az": "Mətbəx 8",
         "ru": "Кухня 8"
@@ -59,21 +91,33 @@
   ],
   "wardrobes": [
     {
-      "img": "/images/wardrobe1.jpg",
+      "img": {
+        "main": "/images/wardrobe1.jpg",
+        "other1": "/images/wardrobe1-1.jpg",
+        "other2": "/images/wardrobe1-2.jpg"
+    },
       "headings": {
         "az": "Dəhliz üçün istehsal etdiyimiz dolab",
         "ru": "Шкаф, изготовленный для прихожей"
       }
     },
-    {
-      "img": "/images/wardrobe2.jpg",
+ {
+      "img": {
+        "main": "/images/wardrobe2.jpg",
+        "other1": "/images/wardrobe2-1.jpg"
+    },
       "headings": {
         "az": "",
         "ru": ""
       }
     },
     {
-      "img": "/images/wardrobe3.jpg",
+      "img": {
+        "main": "/images/wardrobe3.jpg",
+        "other1": "/images/wardrobe3-1.jpg",
+        "other2": "/images/wardrobe3-2.jpg",
+        "other3": "/images/wardrobe3-3.jpg"
+    },
       "headings": {
         "az": "",
         "ru": ""
@@ -87,21 +131,31 @@
       }
     },
     {
-      "img": "/images/wardrobe6.jpg",
+      "img": {
+        "main": "/images/wardrobe6.jpg",
+        "other1": "/images/wardrobe6-1.jpg"
+    },
       "headings": {
         "az": "",
         "ru": ""
       }
     },
-    {
-      "img": "/images/wardrobe7.jpg",
+ {
+      "img": {
+        "main": "/images/wardrobe7.jpg",
+        "other1": "/images/wardrobe7-1.jpg",
+        "other2": "/images/wardrobe7-2.jpg"
+    },
       "headings": {
         "az": "TV / Kamin stendi",
         "ru": "ТВ и каминная стойка"
       }
     },
-    {
-      "img": "/images/wardrobe8.jpg",
+ {
+      "img": {
+        "main": "/images/wardrobe8.jpg",
+        "other1": "/images/wardrobe8-1.jpg"
+    },
       "headings": {
         "az": "",
         "ru": ""
@@ -121,15 +175,22 @@
         "ru": "Письменный стол"
       }
     },
-    {
-      "img": "/images/wardrobe11.jpg",
+ {
+      "img": {
+        "main": "/images/wardrobe11.jpg",
+        "other1": "/images/wardrobe11-1.jpg",
+        "other2": "/images/wardrobe11-2.jpg"
+    },
       "headings": {
         "az": "Böyük dolab",
         "ru": "Большой шкаф"
       }
     },
-    {
-      "img": "/images/wardrobe12.jpg",
+ {
+      "img": {
+        "main": "/images/wardrobe12.jpg",
+        "other1": "/images/wardrobe12-1.jpg"
+    },
       "headings": {
         "az": "Böyük dolab-qarderob",
         "ru": "Большой шкаф-гардероб"
@@ -137,15 +198,23 @@
     }
   ],
   "closets": [
-    {
-      "img": "/images/closet1.jpg",
+  {
+      "img": {
+        "main": "/images/closet1.jpg",
+        "other1": "/images/closet1-1.jpg",
+        "other2": "/images/closet1-1.jpg"
+    },
       "headings": {
         "az": "Temper şüşə profilli qarderob otağı",
         "ru": "Гардеробная с профилем из закалённого стекла"
       }
     },
-    {
-      "img": "/images/closet2.jpg",
+ {
+      "img": {
+        "main": "/images/closet2.jpg",
+        "other1": "/images/closet2-1.jpg",
+        "other2": "/images/closet2-1.jpg"
+    },
       "headings": {
         "az": "Qarderob dolabı",
         "ru": "Шкаф-гардероб"
@@ -153,15 +222,21 @@
     }
   ],
   "bathroom": [
-    {
-      "img": "/images/bathroom1.jpg",
+   {
+      "img": {
+        "main": "/images/bathroom1.jpg",
+        "other1": "/images/bathroom1-1.jpg"
+    },
       "headings": {
         "az": "Hamam mebeli – moydadır",
         "ru": "Мебель для ванной – раковина"
       }
     },
-    {
-      "img": "/images/bathroom2.jpg",
+      {
+      "img": {
+        "main": "/images/bathroom2.jpg",
+        "other1": "/images/bathroom2-1.jpg"
+    },
       "headings": {
         "az": "Moydadır - tumba",
         "ru": "Раковина - тумба"

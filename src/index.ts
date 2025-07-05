@@ -66,12 +66,18 @@ const params = new URLSearchParams(window.location.search);
 const section = params.get('section') || 'kitchen';
 
 interface GalleryItem {
-  img: string;
+  img: {
+    main: string;
+    other1?: string;
+    other2?: string;
+    other3?: string;
+  } | string;
   headings: {
     az: string;
     ru: string;
   };
 }
+
 
 type GalleryData = Record<string, GalleryItem[]>;
 
@@ -109,16 +115,17 @@ function renderGallery(section: string, limit?: number): void {
   items.forEach((item) => {
     let firstImgSrc = '';
 
-if (typeof item.img === 'object' && item.img !== null) {
-  firstImgSrc = item.img['1'] || ''; // first image key "1"
+if (typeof item.img === 'object' && item.img !== null && 'main' in item.img) {
+  firstImgSrc = (item.img as { main: string }).main;
 } else if (typeof item.img === 'string') {
   firstImgSrc = item.img;
 }
+
     const div = document.createElement('div');
     div.classList.add('gallery-imgs');
       const heading = item.headings[lang];
     div.innerHTML = `
-<a href="pages/detailed.html?item=${encodeURIComponent(heading)}">
+<a href="/pages/detailed.html?item=${encodeURIComponent(heading)}">
          <img src="${firstImgSrc}" alt="${heading}">
         <div class="container">
           <div class="shadow2"></div>

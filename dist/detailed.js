@@ -1,3 +1,4 @@
+"use strict";
 const params2 = new URLSearchParams(window.location.search);
 const itemName = decodeURIComponent(params2.get("item") || "");
 const lang2 = localStorage.getItem("lang") || "az";
@@ -29,7 +30,12 @@ function renderItem(index) {
     const item = allItems[index];
     if (!item || !imgElement)
         return;
-    imgElement.src = item.img;
+    if (typeof item.img === "string") {
+        imgElement.src = item.img;
+    }
+    else if (typeof item.img === "object" && item.img.main) {
+        imgElement.src = item.img.main;
+    }
 }
 prevBtn === null || prevBtn === void 0 ? void 0 : prevBtn.addEventListener("click", () => {
     if (currentIndex > 0) {
@@ -43,4 +49,3 @@ nextBtn === null || nextBtn === void 0 ? void 0 : nextBtn.addEventListener("clic
         renderItem(currentIndex);
     }
 });
-export {};
