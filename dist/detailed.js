@@ -30,13 +30,40 @@ function renderItem(index) {
     const item = allItems[index];
     if (!item || !imgElement)
         return;
+    const carouselNav = document.querySelector(".carouselNav");
+    if (!carouselNav)
+        return;
+    carouselNav.innerHTML = "";
     if (typeof item.img === "string") {
         imgElement.src = item.img;
     }
     else if (typeof item.img === "object" && item.img.main) {
         imgElement.src = item.img.main;
+        Object.entries(item.img).forEach(([key, value]) => {
+            if (key !== "main" && value) {
+                const thumb = document.createElement("img");
+                thumb.src = value;
+                thumb.className = "thumbnail";
+                thumb.style.width = "120px";
+                thumb.style.height = "150px";
+                thumb.style.objectFit = "cover";
+                thumb.style.marginBottom = "8px";
+                thumb.style.cursor = "pointer";
+                thumb.addEventListener("click", () => {
+                    imgElement.src = value;
+                });
+                carouselNav.appendChild(thumb);
+            }
+        });
     }
 }
+const blurOverlay = document.querySelector(".blur");
+imgElement.addEventListener("click", () => {
+    const isZoomed = imgElement.classList.toggle("zoomed");
+    if (blurOverlay) {
+        blurOverlay.classList.toggle("visible", isZoomed);
+    }
+});
 prevBtn === null || prevBtn === void 0 ? void 0 : prevBtn.addEventListener("click", () => {
     if (currentIndex > 0) {
         currentIndex--;

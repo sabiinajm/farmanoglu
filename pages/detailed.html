@@ -13,7 +13,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
         integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://unpkg.com/photoswipe@5/dist/photoswipe.css" />
+
     <link rel="stylesheet" href="/styles/main.css">
+    <link rel="stylesheet" href="https://unpkg.com/photoswipe@5/dist/photoswipe.css" />
     <title>Farmanoglu Mebel</title>
 </head>
 
@@ -55,9 +58,13 @@
     </header>
     <main>
         <div class="details">
-            <div class="image-container container">
-                <img id="detail-img" src="" alt="Gallery Image" />
+            <div>
+                <div class="image-container container">
+                    <img id="detail-img" src="" alt="Gallery Image" />
+                </div>
             </div>
+            <div class="blur"></div>
+            <div class="carouselNav container" id="my-gallery"></div>
             <div class="container detailed-btn">
                 <button class="prev" data-i18n="prev"></button>
                 <button class="next" data-i18n="next"></button>
@@ -95,9 +102,22 @@
         </div>
         </div>
     </footer>
-    <script src="https://cdn.jsdelivr.net/npm/medium-zoom@1.1.0/dist/medium-zoom.min.js"></script>
+    <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true"></div>
+    <script src="https://unpkg.com/photoswipe@5/dist/photoswipe.umd.min.js"></script>
+    <script src="https://unpkg.com/photoswipe@5/dist/photoswipe-lightbox.umd.min.js"></script>
     <script type="module" src="/dist/detailed.js"></script>
     <script type="module" src="/dist/index.js"></script>
+    <script type="module">
+        // Use global variables from UMD scripts
+        const lightbox = new PhotoSwipeLightbox({
+            gallery: "#my-gallery",
+            children: "a",
+            pswpModule: PhotoSwipe,
+        });
+
+        lightbox.init();
+    </script>
+
 </body>
 
 </html>
