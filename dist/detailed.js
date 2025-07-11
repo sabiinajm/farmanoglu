@@ -27,6 +27,12 @@ fetch("/src/data/galleryData.json")
     document.body.innerHTML = "<h2>Failed to load data</h2>";
 });
 function renderItem(index) {
+    imgElement.classList.remove("zoomed");
+    imgElement.style.transform = "scale(1) translate(0px, 0px)";
+    imgElement.style.cursor = "zoom-in";
+    isZoomed = false;
+    currentX = 0;
+    currentY = 0;
     const item = allItems[index];
     if (!item || !imgElement)
         return;
@@ -58,10 +64,65 @@ function renderItem(index) {
     }
 }
 const blurOverlay = document.querySelector(".blur");
-imgElement.addEventListener("click", () => {
-    const isZoomed = imgElement.classList.toggle("zoomed");
+let isDragging = false;
+let startX = 0;
+let startY = 0;
+let currentX = 0;
+let currentY = 0;
+let isZoomed = false;
+let originX = "50%";
+let originY = "50%";
+function applyTransform() {
+    if (isZoomed) {
+        imgElement.style.transformOrigin = `${originX} ${originY}`;
+        imgElement.style.transform = `scale(2) translate(${currentX}px, ${currentY}px)`;
+    }
+    else {
+        imgElement.style.transform = "scale(1) translate(0px, 0px)";
+    }
+}
+imgElement.addEventListener("click", (e) => {
+    isZoomed = !isZoomed;
+    imgElement.classList.toggle("zoomed", isZoomed);
+    if (isZoomed) {
+        originX = "50%";
+        originY = "50%";
+        currentX = 0;
+        currentY = 0;
+        imgElement.style.cursor = "grab";
+    }
+    else {
+        currentX = 0;
+        currentY = 0;
+        imgElement.style.cursor = "zoom-in";
+    }
+    applyTransform();
     if (blurOverlay) {
         blurOverlay.classList.toggle("visible", isZoomed);
+    }
+});
+imgElement.addEventListener("mousedown", (e) => {
+    if (!isZoomed)
+        return;
+    isDragging = true;
+    imgElement.style.cursor = "grabbing";
+    startX = e.clientX - currentX;
+    startY = e.clientY - currentY;
+});
+document.addEventListener("mousemove", (e) => {
+    if (!isDragging || !isZoomed)
+        return;
+    e.preventDefault();
+    currentX = e.clientX - startX;
+    currentY = e.clientY - startY;
+    applyTransform();
+});
+document.addEventListener("mouseup", () => {
+    if (!isDragging)
+        return;
+    isDragging = false;
+    if (isZoomed) {
+        imgElement.style.cursor = "grab";
     }
 });
 prevBtn === null || prevBtn === void 0 ? void 0 : prevBtn.addEventListener("click", () => {

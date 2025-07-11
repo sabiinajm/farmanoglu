@@ -627,21 +627,24 @@ top: 24rem;
   opacity: .8;
 }
 .image-container {
-  position: relative;
   overflow: hidden;
+  position: relative;
+  width: 100%;
+  height: auto;
 }
 
 #detail-img {
   transition: transform 0.3s ease;
+  width: 100%;
+  height: auto;
   cursor: zoom-in;
-  z-index: 2;
+  user-select: none;
   position: relative;
 }
 
 #detail-img.zoomed {
-  position: fixed;
-  z-index: 1000;
-  cursor: zoom-out;
+  cursor: grab;
+  transition: none;
 }
 
 .blur {

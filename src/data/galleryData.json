@@ -5,7 +5,8 @@
         "main": "/images/kitchen1.jpg",
         "other1": "/images/kitchen1-1.jpg",
         "other2": "/images/kitchen1-2.jpg",
-        "other3": "/images/kitchen1-3.jpg"
+        "other3": "/images/kitchen1-3.jpg",
+        "other4": "/images/kitchen1.jpg"
     },
       "headings": {
         "az": "Bəyaz mdf-boya mətbəx",
@@ -15,7 +16,8 @@
     {
     "img": {
         "main": "/images/kitchen2.jpg",
-        "other1": "/images/kitchen2-1.jpg"
+        "other1": "/images/kitchen2-1.jpg",
+        "other2": "/images/kitchen2.jpg"
     },
       "headings": {
         "az": "Qulpsuz modern mətbəx",
@@ -25,7 +27,8 @@
     {
       "img": {
         "main": "/images/kitchen3.jpg",
-        "other1": "/images/kitchen3-1.jpg"
+        "other1": "/images/kitchen3-1.jpg",
+        "other2": "/images/kitchen3.jpg"
     },
       "headings": {
         "az": "Adalı mətbəx mebeli",
@@ -37,7 +40,8 @@
         "main": "/images/kitchen4.jpg",
         "other1": "/images/kitchen4-1.jpg",
         "other2": "/images/kitchen4-2.jpg",
-        "other3": "/images/kitchen4-3.jpg"
+        "other3": "/images/kitchen4-3.jpg",
+        "other4": "/images/kitchen4.jpg"
     },
       "headings": {
         "az": "Mdf-boya mətbəx mebeli",
@@ -48,7 +52,8 @@
       "img": {
         "main": "/images/kitchen5.jpg",
         "other1": "/images/kitchen5-1.jpg",
-        "other2": "/images/kitchen5-2.jpg"
+        "other2": "/images/kitchen5-2.jpg",
+        "other3": "/images/kitchen5.jpg"
     },
       "headings": {
         "az": "Mətbəx mebeli və bar",
@@ -60,7 +65,8 @@
         "main": "/images/kitchen6.jpg",
         "other1": "/images/kitchen6-1.jpg",
         "other2": "/images/kitchen6-2.jpg",
-        "other3": "/images/kitchen6-3.jpg"
+        "other3": "/images/kitchen6-3.jpg",
+        "other4": "/images/kitchen6.jpg"
     },
       "headings": {
         "az": "Gözəl mənzərəli yerdə quraşdırdığımız mətbəx mebeli",
@@ -70,7 +76,8 @@
  {
       "img": {
         "main": "/images/kitchen7.jpg",
-        "other1": "/images/kitchen7-1.jpg"
+        "other1": "/images/kitchen7-1.jpg",
+        "other2": "/images/kitchen7.jpg"
     },
       "headings": {
         "az": "Bəyaz mdf-boya mətbəx",
@@ -81,7 +88,8 @@
       "img": {
         "main": "/images/kitchen8.jpg",
         "other1": "/images/kitchen8-1.jpg",
-        "other2": "/images/kitchen8-2.jpg"
+        "other2": "/images/kitchen8-2.jpg",
+        "other3": "/images/kitchen8.jpg"
     },
       "headings": {
         "az": "Mətbəx 8",
@@ -94,7 +102,8 @@
       "img": {
         "main": "/images/wardrobe1.jpg",
         "other1": "/images/wardrobe1-1.jpg",
-        "other2": "/images/wardrobe1-2.jpg"
+        "other2": "/images/wardrobe1-2.jpg",
+        "other3": "/images/wardrobe1.jpg"
     },
       "headings": {
         "az": "Dəhliz üçün istehsal etdiyimiz dolab",
@@ -104,7 +113,8 @@
  {
       "img": {
         "main": "/images/wardrobe2.jpg",
-        "other1": "/images/wardrobe2-1.jpg"
+        "other1": "/images/wardrobe2-1.jpg",
+        "other2": "/images/wardrobe2.jpg"
     },
       "headings": {
         "az": "",
@@ -116,15 +126,9 @@
         "main": "/images/wardrobe3.jpg",
         "other1": "/images/wardrobe3-1.jpg",
         "other2": "/images/wardrobe3-2.jpg",
-        "other3": "/images/wardrobe3-3.jpg"
+        "other3": "/images/wardrobe3-3.jpg",
+        "other4": "/images/wardrobe3.jpg"
     },
-      "headings": {
-        "az": "",
-        "ru": ""
-      }
-    },
-    {
-      "img": "/images/wardrobe4.jpg",
       "headings": {
         "az": "",
         "ru": ""
@@ -133,7 +137,8 @@
     {
       "img": {
         "main": "/images/wardrobe6.jpg",
-        "other1": "/images/wardrobe6-1.jpg"
+        "other1": "/images/wardrobe6-1.jpg",
+        "other2": "/images/wardrobe6.jpg"
     },
       "headings": {
         "az": "",
@@ -144,7 +149,8 @@
       "img": {
         "main": "/images/wardrobe7.jpg",
         "other1": "/images/wardrobe7-1.jpg",
-        "other2": "/images/wardrobe7-2.jpg"
+        "other2": "/images/wardrobe7-2.jpg",
+        "other3": "/images/wardrobe7.jpg"
     },
       "headings": {
         "az": "TV / Kamin stendi",
@@ -154,7 +160,8 @@
  {
       "img": {
         "main": "/images/wardrobe8.jpg",
-        "other1": "/images/wardrobe8-1.jpg"
+        "other1": "/images/wardrobe8-1.jpg",
+        "other2": "/images/wardrobe8.jpg"
     },
       "headings": {
         "az": "",
@@ -168,18 +175,13 @@
         "ru": ""
       }
     },
-    {
-      "img": "/images/wardrobe10.jpg",
-      "headings": {
-        "az": "Yazı masası",
-        "ru": "Письменный стол"
-      }
-    },
  {
       "img": {
         "main": "/images/wardrobe11.jpg",
         "other1": "/images/wardrobe11-1.jpg",
-        "other2": "/images/wardrobe11-2.jpg"
+        "other2": "/images/wardrobe11-2.jpg",
+        "other3": "/images/wardrobe10.jpg",
+        "other4": "/images/wardrobe11.jpg"
     },
       "headings": {
         "az": "Böyük dolab",
@@ -189,7 +191,8 @@
  {
       "img": {
         "main": "/images/wardrobe12.jpg",
-        "other1": "/images/wardrobe12-1.jpg"
+        "other1": "/images/wardrobe12-1.jpg",
+        "other2": "/images/wardrobe12.jpg"
     },
       "headings": {
         "az": "Böyük dolab-qarderob",
@@ -202,7 +205,11 @@
       "img": {
         "main": "/images/closet1.jpg",
         "other1": "/images/closet1-1.jpg",
-        "other2": "/images/closet1-1.jpg"
+        "other2": "/images/closet1-2.jpg",
+        "other3": "/images/closet1-3.jpg",
+        "other4": "/images/closet1-4.jpg",
+        "other5": "/images/closet1-5.jpg",
+        "other6": "/images/closet1.jpg"
     },
       "headings": {
         "az": "Temper şüşə profilli qarderob otağı",
@@ -213,7 +220,8 @@
       "img": {
         "main": "/images/closet2.jpg",
         "other1": "/images/closet2-1.jpg",
-        "other2": "/images/closet2-1.jpg"
+        "other2": "/images/closet2-2.jpg",
+        "other3": "/images/closet2.jpg"
     },
       "headings": {
         "az": "Qarderob dolabı",
@@ -225,7 +233,8 @@
    {
       "img": {
         "main": "/images/bathroom1.jpg",
-        "other1": "/images/bathroom1-1.jpg"
+        "other1": "/images/bathroom1-1.jpg",
+        "other2": "/images/bathroom1.jpg"
     },
       "headings": {
         "az": "Hamam mebeli – moydadır",
@@ -235,7 +244,8 @@
       {
       "img": {
         "main": "/images/bathroom2.jpg",
-        "other1": "/images/bathroom2-1.jpg"
+        "other1": "/images/bathroom2-1.jpg",
+        "other2": "/images/bathroom2.jpg"
     },
       "headings": {
         "az": "Moydadır - tumba",
@@ -244,8 +254,10 @@
     }
 ],
  "bedroom": [
-    {
-      "img": "/images/bedroom1.jpg",
+  {
+      "img": {
+        "main": "/images/bedroom1.jpg"
+    },
       "headings": {
         "az": "Yataq dəsti",
         "ru": "Спальный комплект"
