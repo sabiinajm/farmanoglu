@@ -27,8 +27,8 @@
 }
 
 .menu-icon {
-  width: 17px;
-  height: 14px;
+  width: 24px;
+  height: 20px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -41,19 +41,19 @@
   transition: 0.3s;
 }
 .menu-icon.active div:nth-child(1) {
-  transform: rotate(45deg) translate(3px, 4px);
+  transform: rotate(45deg) translate(3px, 6px);
 }
 .menu-icon.active div:nth-child(2) {
   opacity: 0;
 }
 .menu-icon.active div:nth-child(3) {
-  transform: rotate(-45deg) translate(4px, -5px);
+  transform: rotate(-45deg) translate(6px, -10px);
 }
 
 header {
   position: sticky;
   top: 0;
-  z-index: 100;
+  z-index: 180;
   box-shadow: rgba(0, 0, 0, 0.4117647059) 1px 1px 20px;
   background: #fff;
 }
@@ -85,7 +85,7 @@ header {
 }
 .logo h1 {
   text-transform: uppercase;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   font-weight: 300;
   letter-spacing: 3px;
 }
@@ -120,7 +120,7 @@ header {
   white-space: nowrap;
   top: 63px;
   padding-top: 20px;
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   width: 100%;
   height: 100vh;
   padding-left: 20px;
@@ -155,13 +155,13 @@ header {
   padding-right: 10px;
   color: #7c041c;
   font-weight: 600;
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   text-decoration: underline;
   cursor: pointer;
 }
 
 .phone-number {
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   text-decoration: underline;
   text-decoration-color: #7c041c;
   cursor: pointer;
@@ -649,21 +649,23 @@ header {
 }
 
 .image-container {
-  position: relative;
   overflow: hidden;
+  position: relative;
+  width: 100%;
+  height: auto;
 }
 
 #detail-img {
   transition: transform 0.3s ease;
+  z-index: 150;
   cursor: zoom-in;
-  z-index: 2;
+  user-select: none;
   position: relative;
 }
 
 #detail-img.zoomed {
-  position: fixed;
-  z-index: 1000;
-  cursor: zoom-out;
+  cursor: grab;
+  transition: none;
 }
 
 .blur {
