@@ -92,8 +92,8 @@
         "other3": "/images/kitchen8.jpg"
     },
       "headings": {
-        "az": "Mətbəx 8",
-        "ru": "Кухня 8"
+      "az": "Qulpsuz modern mətbəx",
+        "ru": "Современная кухня без ручек"
       }
     }
   ],
@@ -256,7 +256,9 @@
  "bedroom": [
   {
       "img": {
-        "main": "/images/bedroom1.jpg"
+        "main": "/images/bedroom1.jpg",
+        "other1": "/images/bedroom1-1.jpg",
+         "other2": "/images/bedroom1.jpg"
     },
       "headings": {
         "az": "Yataq dəsti",
@@ -264,31 +266,50 @@
       }
     },
     {
-      "img": "/images/bedroom2.jpg",
+       "img": {
+        "main": "/images/bedroom2.jpg",
+        "other1": "/images/bedroom2-1.jpg",
+         "other2": "/images/bedroom2-2.jpg",
+         "other3": "/images/bedroom2.jpg"
+    },
       "headings": {
         "az": "Uşaq otağı dəsti",
         "ru": "Детский комплект мебели"
       }
     },
     {
-      "img": "/images/bedroom3.jpg",
+        "img": {
+        "main": "/images/bedroom3.jpg",
+        "other1": "/images/bedroom3-1.jpg",
+         "other2": "/images/bedroom3-2.jpg",
+         "other3": "/images/bedroom3.jpg"
+    },
       "headings": {
-        "az": "Mətbəx 8",
-        "ru": "Кухня 8"
+       "az": "Yataq dəsti",
+        "ru": "Спальный комплект"
       }
     },
     {
-      "img": "/images/bedroom4.jpg",
+    "img": {
+        "main": "/images/bedroom4.jpg",
+        "other1": "/images/bedroom4-1.jpg",
+         "other2": "/images/bedroom4-2.jpg",
+         "other3": "/images/bedroom4.jpg"
+    },
       "headings": {
         "az": "Yataq dəsti",
         "ru": "Спальный комплект"
       }
     },
     {
-      "img": "/images/bedroom5.jpg",
+     "img": {
+        "main": "/images/bedroom5.jpg",
+        "other1": "/images/bedroom5-1.jpg",
+         "other2": "/images/bedroom5.jpg"
+    },
       "headings": {
-        "az": "Mətbəx 8",
-        "ru": "Кухня 8"
+      "az": "Yataq dəsti",
+        "ru": "Спальный комплект"
       }
     }
   ],
@@ -310,8 +331,8 @@
     {
       "img": "/images/other3.jpg",
       "headings": {
-        "az": "Mətbəx",
-        "ru": "Кухня"
+     "az": "Trumo-güzgü",
+        "ru": "Трюмо-зеркало"
       }
     },
     {
@@ -331,15 +352,15 @@
     {
       "img": "/images/other6.jpg",
       "headings": {
-        "az": "Mətbəx",
-        "ru": "Кухня"
+      "az": "Trumo-güzgü",
+        "ru": "Трюмо-зеркало"
       }
     },
     {
       "img": "/images/other7.jpg",
       "headings": {
-        "az": "Mətbəx",
-        "ru": "Кухня"
+      "az": "Trumo-güzgü",
+        "ru": "Трюмо-зеркало"
       }
     },
     {

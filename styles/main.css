@@ -27,15 +27,16 @@
 }
 
 .menu-icon {
-  width: 24px;
-  height: 20px;
+  width: 26px;
+  height: 18px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   cursor: pointer;
+  margin-right: 10px;
 }
 .menu-icon div {
-  height: 2px;
+  height: 1.5px;
   background-color: #222;
   border-radius: 4px;
   transition: 0.3s;
@@ -47,7 +48,7 @@
   opacity: 0;
 }
 .menu-icon.active div:nth-child(3) {
-  transform: rotate(-45deg) translate(6px, -10px);
+  transform: rotate(-45deg) translate(6px, -9px);
 }
 
 header {
@@ -85,7 +86,7 @@ header {
 }
 .logo h1 {
   text-transform: uppercase;
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-weight: 300;
   letter-spacing: 3px;
 }
@@ -387,15 +388,59 @@ header {
 }
 .furniture-section ul {
   padding-top: 2rem;
+  padding-bottom: 2rem;
+  padding-top: 2rem;
   list-style: none;
   font-weight: 200;
   display: flex;
   gap: 2rem;
   overflow-x: auto;
+  white-space: nowrap;
 }
 .furniture-section li:hover {
   color: #999;
   cursor: pointer;
+}
+
+.furniter-menu {
+  display: flex;
+  align-items: center;
+}
+
+.relative-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.furniture-menu {
+  display: flex;
+  overflow-x: auto;
+  gap: 20px;
+  padding: 10px 0;
+  position: relative;
+  z-index: 1;
+  list-style: none;
+  margin: 0;
+}
+
+.white-shadow {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 30px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.white-shadow1 {
+  left: 0;
+  background: linear-gradient(to right, white, transparent);
+}
+
+.white-shadow2 {
+  right: 0;
+  background: linear-gradient(to left, white, transparent);
 }
 
 .gallery {
@@ -575,7 +620,7 @@ header {
 
 .image-container {
   background: #000;
-  width: 90%;
+  width: 100%;
   height: 600px;
   display: flex;
   justify-content: center;
@@ -583,7 +628,7 @@ header {
 }
 
 #detail-img {
-  width: 90%;
+  width: 100%;
   object-fit: contain;
   height: 600px;
 }
@@ -602,26 +647,20 @@ header {
 .prev {
   color: #7c041c;
   text-align: left;
-  padding-left: 80px;
+  padding-left: 20px;
+  padding-right: 10px;
   transition: all 0.2s ease-in-out;
-}
-
-.prev:hover {
-  background: #7c041c;
-  color: #fff;
-  border-right: 1px white solid;
+  white-space: nowrap;
 }
 
 .next {
   text-align: right;
-  padding-right: 80px;
+  padding-right: 20px;
+  padding-left: 10px;
   background: #7c041c;
   transition: all 0.2s ease-in-out;
   color: white;
-}
-
-.next:hover {
-  background: #000;
+  white-space: nowrap;
 }
 
 .image-container img {
@@ -812,6 +851,20 @@ footer .btn {
   .hover-image2.show {
     opacity: 1;
     transform: translateY(-50px);
+  }
+  .prev {
+    padding-left: 80px;
+  }
+  .next {
+    padding-right: 80px;
+  }
+  .prev:hover {
+    background: #7c041c;
+    color: #fff;
+    border-right: 1px white solid;
+  }
+  .next:hover {
+    background: #000;
   }
 }
 

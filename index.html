@@ -3,8 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="
-    viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -121,14 +120,17 @@
         <div class="furniture-section">
             <div class="container">
                 <h2 data-i18n="furnitureHead"></h2>
-                <ul id="furnitureMenu">
-                    <li class="listItem active" data-section="kitchen" data-i18n="furniture-section-kitchen"></li>
-                    <li class="listItem" data-section="wardrobes" data-i18n="furniture-section-wardrobes"></li>
-                    <li class="listItem" data-section="closets" data-i18n="furniture-section-closets"></li>
-                    <li class="listItem" data-section="bathroom" data-i18n="furniture-section-bathroom"></li>
-                    <li class="listItem" data-section="bedroom" data-i18n="furniture-section-bedroom"></li>
-                    <li class="listItem" data-section="other" data-i18n="furniture-section-other"></li>
-                </ul>
+                <div class="relative-wrapper" style="position: relative;">
+                    <ul id="furnitureMenu" class="furniture-menu">
+                        <li class="listItem active" data-section="kitchen" data-i18n="furniture-section-kitchen"></li>
+                        <li class="listItem" data-section="wardrobes" data-i18n="furniture-section-wardrobes"></li>
+                        <li class="listItem" data-section="closets" data-i18n="furniture-section-closets"></li>
+                        <li class="listItem" data-section="bathroom" data-i18n="furniture-section-bathroom"></li>
+                        <li class="listItem" data-section="bedroom" data-i18n="furniture-section-bedroom"></li>
+                        <li class="listItem" data-section="other" data-i18n="furniture-section-other"></li>
+                    </ul>
+                    <div class="white-shadow white-shadow2"></div>
+                </div>
                 <div class="gallery" id="gallery"></div>
                 <a id="moreLink">
                     <h4 data-i18n="more"></h4>
